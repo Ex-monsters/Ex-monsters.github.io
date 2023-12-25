@@ -1,0 +1,909 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>前端学习——HTML+CSS | monster's blog</title><meta name="description" content="# 前端学习 ——HTML+CSS # 001. 什么是网页  网页由三种元素组成：HTML、CSS、JavaScript HTML 决定，网页上显示什么内容 CSS 决定显示内容的外观（位置，大小，形状等） JavaScript 主要负责网页中的动态内容  标签向： 1&lt;h1&gt;里面的字符都是粗体的&lt;/h1&gt; # 002. 标签的基本书写格式   标签分为两种：1、单标签"><meta name="keywords" content="HTML"><meta name="author" content="Ex-monster"><meta name="copyright" content="Ex-monster"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/found.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="前端学习——HTML+CSS"><meta name="twitter:description" content="# 前端学习 ——HTML+CSS # 001. 什么是网页  网页由三种元素组成：HTML、CSS、JavaScript HTML 决定，网页上显示什么内容 CSS 决定显示内容的外观（位置，大小，形状等） JavaScript 主要负责网页中的动态内容  标签向： 1&lt;h1&gt;里面的字符都是粗体的&lt;/h1&gt; # 002. 标签的基本书写格式   标签分为两种：1、单标签"><meta name="twitter:image" content="http://example.com/img/shine.jpg"><meta property="og:type" content="article"><meta property="og:title" content="前端学习——HTML+CSS"><meta property="og:url" content="http://example.com/2023/04/21/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94HTML+CSS/"><meta property="og:site_name" content="monster's blog"><meta property="og:description" content="# 前端学习 ——HTML+CSS # 001. 什么是网页  网页由三种元素组成：HTML、CSS、JavaScript HTML 决定，网页上显示什么内容 CSS 决定显示内容的外观（位置，大小，形状等） JavaScript 主要负责网页中的动态内容  标签向： 1&lt;h1&gt;里面的字符都是粗体的&lt;/h1&gt; # 002. 标签的基本书写格式   标签分为两种：1、单标签"><meta property="og:image" content="http://example.com/img/shine.jpg"><meta property="article:published_time" content="2023-04-21T14:04:57.006Z"><meta property="article:modified_time" content="2023-12-03T07:56:21.860Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="http://example.com/2023/04/21/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94HTML+CSS/"><link rel="prev" title="Linux学习讲义" href="http://example.com/2023/06/26/Linux%20%E5%AD%A6%E4%B9%A0%E8%AE%B2%E4%B9%89/"><link rel="next" title="Visual Studio 常用快捷键分享" href="http://example.com/2023/04/13/VS%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isSidebar: true  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 6.1.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><canvas class="fireworks"></canvas><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/cat.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">8</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 列表</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 影片</span></a></li></ul></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0htmlcss"><span class="toc-number">1.</span> <span class="toc-text"> 前端学习 ——HTML+CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#001%E4%BB%80%E4%B9%88%E6%98%AF%E7%BD%91%E9%A1%B5"><span class="toc-number">1.1.</span> <span class="toc-text"> 001. 什么是网页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#002%E6%A0%87%E7%AD%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%B9%A6%E5%86%99%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 002. 标签的基本书写格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#003html%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text"> 003.HTML 的基本格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#004%E6%A0%87%E9%A2%98%E4%B8%8E%E6%AE%B5%E8%90%BD%E6%A0%87%E7%AD%BE"><span class="toc-number">1.4.</span> <span class="toc-text"> 004. 标题与段落标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#005%E9%A1%B5%E9%9D%A2%E4%B8%AD%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="toc-number">1.5.</span> <span class="toc-text"> 005. 页面中插入图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#006%E8%B6%85%E9%93%BE%E6%8E%A5%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="toc-number">1.6.</span> <span class="toc-text"> 006. 超链接相关操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#007%E4%BF%AE%E9%A5%B0%E6%96%87%E6%9C%AC%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">1.7.</span> <span class="toc-text"> 007. 修饰文本常用标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#008%E6%B3%A8%E9%87%8A%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.8.</span> <span class="toc-text"> 008. 注释的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#009%E5%88%97%E8%A1%A8%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.9.</span> <span class="toc-text"> 009. 列表的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#010%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E6%A0%87%E7%AD%BE%E7%9A%84%E6%8A%80%E5%B7%A7"><span class="toc-number">1.10.</span> <span class="toc-text"> 010. 快速创建标签的技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#011%E8%A1%A8%E6%A0%BC%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.11.</span> <span class="toc-text"> 011. 表格的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#012%E8%A1%A8%E6%A0%BC%E7%9A%84%E8%BF%9B%E9%98%B6%E4%BD%BF%E7%94%A8"><span class="toc-number">1.12.</span> <span class="toc-text"> 012. 表格的进阶使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#013%E7%BD%91%E9%A1%B5%E4%B8%AD%E7%9A%84%E9%A2%9C%E8%89%B2%E5%80%BC%E5%92%8C%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D"><span class="toc-number">1.13.</span> <span class="toc-text"> 013. 网页中的颜色值和长度单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#014%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E5%92%8C%E5%86%85%E8%81%94%E5%85%83%E7%B4%A0"><span class="toc-number">1.14.</span> <span class="toc-text"> 014. 块级元素和内联元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#015%E8%A1%A8%E5%8D%95%E7%9A%84%E8%AE%A4%E8%AF%86"><span class="toc-number">1.15.</span> <span class="toc-text"> 015. 表单的认识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#016%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E5%92%8C%E6%8F%90%E4%BA%A4"><span class="toc-number">1.16.</span> <span class="toc-text"> 016. 表单数据采集和提交</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#017%E5%85%B6%E4%BB%96%E5%AE%9E%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">1.17.</span> <span class="toc-text"> 017. 其他实用标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#018svg%E7%9A%84%E8%AE%A4%E8%AF%86"><span class="toc-number">1.18.</span> <span class="toc-text"> 018.SVG 的认识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E7%9A%84%E4%B8%89%E7%A7%8D%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.19.</span> <span class="toc-text"> CSS 的三种样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E7%9A%84%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.20.</span> <span class="toc-text"> CSS 的文本操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E6%96%87%E6%9C%AC%E8%A3%85%E9%A5%B0"><span class="toc-number">1.21.</span> <span class="toc-text"> CSS 文本装饰</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%AD%97%E4%BD%93"><span class="toc-number">1.22.</span> <span class="toc-text"> 设置字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%AD%97%E4%BD%93%E9%A3%8E%E6%A0%BC%E5%92%8C%E6%A0%B7%E5%BC%8F%E7%AE%80%E5%86%99"><span class="toc-number">1.23.</span> <span class="toc-text"> 设置字体风格和样式简写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E8%B0%B7%E6%AD%8C%E5%AD%97%E4%BD%93%E5%92%8Cicon%E5%9B%BE%E6%A0%87"><span class="toc-number">1.24.</span> <span class="toc-text"> CSS 谷歌字体和 Icon 图标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E9%80%89%E6%8B%A9%E5%99%A8%E5%9C%B0%E6%9D%83%E9%87%8D"><span class="toc-number">1.25.</span> <span class="toc-text"> CSS 选择器地权重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E6%B7%BB%E5%8A%A0%E8%BE%B9%E6%A1%86"><span class="toc-number">1.26.</span> <span class="toc-text"> CSS 添加边框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%88%97%E8%A1%A8"><span class="toc-number">1.27.</span> <span class="toc-text"> CSS 列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E8%83%8C%E6%99%AF%E5%B1%9E%E6%80%A7"><span class="toc-number">1.28.</span> <span class="toc-text"> CSS 背景属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%BE%E7%81%B5%E5%9B%BE"><span class="toc-number">1.29.</span> <span class="toc-text"> 精灵图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E8%BD%AE%E5%BB%93"><span class="toc-number">1.30.</span> <span class="toc-text"> CSS 轮廓</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E8%BE%B9%E8%B7%9D"><span class="toc-number">1.31.</span> <span class="toc-text"> CSS 边距</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%A1%AB%E5%85%85%E5%92%8C%E5%AE%BD%E9%AB%98"><span class="toc-number">1.32.</span> <span class="toc-text"> CSS 填充和宽高</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.33.</span> <span class="toc-text"> CSS 盒模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%B8%83%E5%B1%80%E4%B9%8B%E6%98%BE%E7%A4%BA%E5%B1%9E%E6%80%A7"><span class="toc-number">1.34.</span> <span class="toc-text"> CSS 布局之显示属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%B8%83%E5%B1%80%E4%B9%8B%E5%85%83%E7%B4%A0%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.35.</span> <span class="toc-text"> CSS 布局之元素类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%B8%83%E5%B1%80%E4%B9%8B%E6%BA%A2%E5%87%BA%E5%A4%84%E7%90%86"><span class="toc-number">1.36.</span> <span class="toc-text"> CSS 布局之溢出处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%B8%83%E5%B1%80%E4%B9%8B%E6%B5%AE%E5%8A%A8%E5%9F%BA%E7%A1%80-%E6%B8%85%E7%90%86"><span class="toc-number">1.37.</span> <span class="toc-text"> CSS 布局之浮动基础、清理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.38.</span> <span class="toc-text"> CSS 布局之定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%AE%9A%E4%BD%8D%E7%9A%84%E5%A0%86%E5%8F%A0"><span class="toc-number">1.39.</span> <span class="toc-text"> CSS 定位的堆叠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E5%B8%83%E5%B1%80%E5%80%BC%E5%AE%BD%E9%AB%98%E8%87%AA%E9%80%82%E5%BA%94"><span class="toc-number">1.40.</span> <span class="toc-text"> CSS 布局值宽高自适应</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E7%9A%84%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-number">1.41.</span> <span class="toc-text"> CSS 的数学函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bfc"><span class="toc-number">1.42.</span> <span class="toc-text"> BFC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css%E8%A1%A8%E6%A0%BC"><span class="toc-number">1.43.</span> <span class="toc-text"> CSS 表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%8C%E7%BB%93%E6%92%92%E8%8A%B1"><span class="toc-number">1.44.</span> <span class="toc-text"> 完结撒花</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(/img/shine.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">monster's blog</a></span><span class="pull_right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fa fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> 链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fa fa-list" aria-hidden="true"></i><span> 列表</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/Gallery/"><i class="fa-fw fa fa-picture-o"></i><span> 照片</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fa fa-film"></i><span> 影片</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">前端学习——HTML+CSS</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2023-04-21 22:04:57"><i class="fa fa-calendar" aria-hidden="true"></i> 发表于 2023-04-21</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2023-12-03 15:56:21"><i class="fa fa-history" aria-hidden="true"></i> 更新于 2023-12-03</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/HTML%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0/">HTML语法学习</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>评论数:</span><a href="/2023/04/21/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94HTML+CSS/#post-comment"><span class="gitalk-comment-count comment-count"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div id="article-container"><h1 id="前端学习htmlcss"><a class="markdownIt-Anchor" href="#前端学习htmlcss">#</a> 前端学习 ——HTML+CSS</h1>
+<h2 id="001什么是网页"><a class="markdownIt-Anchor" href="#001什么是网页">#</a> 001. 什么是网页</h2>
+<ul>
+<li>网页由三种元素组成：HTML、CSS、JavaScript</li>
+<li>HTML 决定，网页上显示什么内容</li>
+<li>CSS 决定显示内容的外观（位置，大小，形状等）</li>
+<li>JavaScript 主要负责网页中的动态内容</li>
+</ul>
+<p>标签向：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>里面的字符都是粗体的<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="002标签的基本书写格式"><a class="markdownIt-Anchor" href="#002标签的基本书写格式">#</a> 002. 标签的基本书写格式</h2>
+<ul>
+<li>
+<p>标签分为两种：1、单标签 (&lt;/&gt;)。2、双标签 (&lt;&gt;&lt;/&gt;)(前一个标签为开标签，后面的标签为闭合标签)。</p>
+</li>
+<li>
+<p>vscode 中的自动补全操作：打上 h1 后按下 tab 键会自动补全标签</p>
+</li>
+<li>
+<p>例：：换行操作的单标签：<br></p>
+</li>
+<li>
+<p>标签属性：1、书写在标签自己本身；2、可以为标签提供一些额外信息或者对标签进行修饰。</p>
+</li>
+<li>
+<p>书写标签属性注意点：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">双标签：<span class="tag">&lt;<span class="name">h1</span> 属性名=<span class="string">&quot;属性值&quot;</span> 属性名<span class="attr">2</span>=<span class="string">&quot;属性值2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span>  多个属性名之间用空格空开</span><br><span class="line">单标签：<span class="tag">&lt;<span class="name">img</span> 属性名=<span class="string">&quot;属性值&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="003html的基本格式"><a class="markdownIt-Anchor" href="#003html的基本格式">#</a> 003.HTML 的基本格式</h2>
+<p>如下代码所示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>标准网页格式<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>内容填充<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">其中，vscode有快捷键，通过按下!+Tab键就能直接生成该格式</span><br></pre></td></tr></table></figure>
+<h2 id="004标题与段落标签"><a class="markdownIt-Anchor" href="#004标题与段落标签">#</a> 004. 标题与段落标签</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">html中共设立了6级标签</span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h4</span>&gt;</span><span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h5</span>&gt;</span><span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span>&gt;</span><span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line"></span><br><span class="line">没有h7标签可以使用</span><br><span class="line"></span><br><span class="line">段落标签</span><br><span class="line">用字母p表示</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>文章巴拉巴拉<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">其中如果想要加入空格，如果单纯用空格是显示不出东西的，要表现空格，需要写<span class="symbol">&amp;nbsp;</span>来充当一个空格键；如果要表示一个中文汉字大小的空格，需要用<span class="symbol">&amp;emsp;</span></span><br><span class="line"></span><br><span class="line">水平居中属性名与属性值：align=&quot;center&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="005页面中插入图片"><a class="markdownIt-Anchor" href="#005页面中插入图片">#</a> 005. 页面中插入图片</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">此处要用到<span class="tag">&lt;<span class="name">img</span>&gt;</span>标签，对，是个单标签。基本语法是<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;图片路径&quot;</span>&gt;</span></span><br><span class="line">如果是同一级的，直接用文件名即可，如果是上一级文件夹下的文件，要用&quot;../img/图片.png&quot;</span><br><span class="line"></span><br><span class="line">总结：</span><br><span class="line">	相对路径：1、页面和图片在同一文件夹，不需要定义路径。2、页面引用子文件里的图片，路径查找使用img1/img2/img3。3、页面引用外层文件夹里的图片，路径查找使用../../../（有几个写几个）</span><br><span class="line">	绝对路径：①引用互联网资源，直接使用互联网图片地址。②引用本地磁盘中的某个文件夹图片，拷贝全部物理路径。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">图片标签进阶处：</span><br><span class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;图片路径&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span>	增加alt这个标签，来添加对图片的说明（显示alt内容，要求图片加载失败时才会出现，同时此时alt的定义内容是占用页面空间的），如果要让鼠标悬于图片之上也会有内容相关的说明，只需再加一个标签title即可（title属性定义的内容是不占据页面空间的；同时默认是隐藏的，只有鼠标划入的时候才会显示）。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">图片标签拓展：</span><br><span class="line">	网页中使用的图片格式是有限的，支持的格式有：gif、jpg、jpeg、png、bmp、webp</span><br><span class="line">	其中：GIF图片支持透明、压缩、交错和多图像图片（无损压缩格式），但是最多只有256色</span><br><span class="line">	JPG和JPEG是高度有损压缩方式，同时可以支持的颜色数量非常多（上百万种）</span><br><span class="line">	PNG是一种新的无显示质量损耗的文件格式，汲取GIF和JPEG两者的有点，存储形式丰富，有利于网络的传输却不失真</span><br><span class="line">	BMP常用于网站注册或登录页面中的验证码，通常是不压缩的，所以要大很多</span><br><span class="line">	WEBP同时提供了有损压缩和无损压缩的图片文件格式（谷歌公司针对谷歌浏览器研发出来的图片格式）</span><br></pre></td></tr></table></figure>
+<h2 id="006超链接相关操作"><a class="markdownIt-Anchor" href="#006超链接相关操作">#</a> 006. 超链接相关操作</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HyperText(超文本)</span><br><span class="line">实现是通过双标签<span class="tag">&lt;<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span>(a是anchor的意思，要实现跳转还必须携带一个属性href，即<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;目标页面的地址&quot;</span>&gt;</span>显示在页面中的文本<span class="tag">&lt;/<span class="name">a</span>&gt;</span>  可以使用相对和绝对路径，标签对的内容就是显示在页面中的内容，要定义打开方式（在原界面上打开还是新开一个标签页，要加入一个新的属性target,属性值定义为_self表示链接的目标页面在当前窗口中打开；定义为_blank表示链接的咪表页面在新的浏览器窗口中打开）)</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">超链接的锚点功能</span><br><span class="line">	锚点是网页超级链接中的一种，又叫做命名标记，可以当作定位器，是页面内的超级链接。实现页面中的不同部分的快速跳转。</span><br><span class="line">实现超链接的锚点方法：1、跳转目标的定义。2、锚点的定义。	在跳转目标的位置处，给对应的标签添加一个id属性，其中添加的属性值就是这个锚点的名字（要遵循文件和文件夹的命名规则），一个锚点的跳转只能跳转到一个位置，使用id的属性值不能重复出现。之后，给跳转目标定义一个相应的超链接，添加a标签，并且给他添加href属性，此时属性值不在是页面地址或者是互联网地址，而是通过#来携带目标名字。</span><br><span class="line">示例：  段落处：<span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">&quot;box1&quot;</span>&gt;</span>段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span>	超链接：<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#box1&quot;</span>&gt;</span>目标一<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">详细实现可以参考profile.html文件</span><br></pre></td></tr></table></figure>
+<h2 id="007修饰文本常用标签"><a class="markdownIt-Anchor" href="#007修饰文本常用标签">#</a> 007. 修饰文本常用标签</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">前面说到文本加粗，用到的是h1、h2等标题标签，这里会给到专用来加粗字体的标签。</span><br><span class="line">第一个b(bold加粗的缩写)标签:<span class="tag">&lt;<span class="name">b</span>&gt;</span>加粗的文本<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">第二个strong标签:<span class="tag">&lt;<span class="name">strong</span>&gt;</span>加粗的文本<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">两者区别：b标签仅仅是为了加粗显示文本；strong标签语义化更强，表示该文本比较重要，同时如果用到阅读设备阅读网页时，strong的文本会被重（zhòng）读。</span><br><span class="line"></span><br><span class="line">文本倾斜效果也是比较常用的强调方式，和加粗一样，有两种标签来实现。</span><br><span class="line">第一个i(italic倾斜的缩写)标签:<span class="tag">&lt;<span class="name">i</span>&gt;</span>倾斜的文本<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">第二个em(emphasize强调的缩写)标签:<span class="tag">&lt;<span class="name">em</span>&gt;</span>倾斜的文本<span class="tag">&lt;/<span class="name">em</span>&gt;</span></span><br><span class="line">两者区别：i标签仅仅为了让字体显示斜体，没有强调的语义；em标签不仅能让字体显示斜体，还可以加强语气，在爬虫爬取网页时会特别收录em中的文本，以便别人通过百度搜索em里面包含的关键字时会优先显示。</span><br><span class="line"></span><br><span class="line">文本的删除显示效果（类似word中的删除线）也是挺重要的一种比较重要的功能，一样也有两种标签。</span><br><span class="line">第一个s(strike删除的缩写)标签:<span class="tag">&lt;<span class="name">s</span>&gt;</span>删除线文本<span class="tag">&lt;/<span class="name">s</span>&gt;</span></span><br><span class="line">第二个del(delete删除的缩写)标签:<span class="tag">&lt;<span class="name">del</span>&gt;</span>删除线文本<span class="tag">&lt;/<span class="name">del</span>&gt;</span></span><br><span class="line">区别：HTML5已经不支持s标签了，所以尽量使用del标签为好</span><br><span class="line"></span><br><span class="line">其他的一些润色标签owo/：</span><br><span class="line">①</span><br><span class="line">为文本添加下划线：</span><br><span class="line">使用u(underline的缩写)标签:<span class="tag">&lt;<span class="name">u</span>&gt;</span>下划线文本<span class="tag">&lt;/<span class="name">u</span>&gt;</span></span><br><span class="line">②</span><br><span class="line">角标的实现（上/下）</span><br><span class="line">使用sup(superscript上角标的缩写)或sub(下角标suberscript下角标的缩写)标签:</span><br><span class="line">上角标：<span class="tag">&lt;<span class="name">sup</span>&gt;</span>上角标文本<span class="tag">&lt;/<span class="name">sup</span>&gt;</span></span><br><span class="line">下角标：<span class="tag">&lt;<span class="name">sub</span>&gt;</span>下角标文本<span class="tag">&lt;/<span class="name">sub</span>&gt;</span></span><br><span class="line"></span><br><span class="line">那么如果我要多种效果叠加在一起该怎么实现捏~(￣▽￣)~*?</span><br><span class="line">答：使用标签的嵌套来实现（类似洋葱一样，层层包裹）。</span><br><span class="line">注意点：要整个标签包裹，万万不可交叉嵌套。</span><br><span class="line">具体实现可以参考italic.delete.bold.html文件</span><br></pre></td></tr></table></figure>
+<h2 id="008注释的使用"><a class="markdownIt-Anchor" href="#008注释的使用">#</a> 008. 注释的使用</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">注释的格式：<span class="comment">&lt;!-- 注释的内容 --&gt;</span></span><br><span class="line">其中快速生成注释的快捷键是：ctrl+/</span><br></pre></td></tr></table></figure>
+<h2 id="009列表的使用"><a class="markdownIt-Anchor" href="#009列表的使用">#</a> 009. 列表的使用</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">html中有三种列表，分别为：有序列表、无序列表、自定义列表</span><br><span class="line">①有序列表</span><br><span class="line">由两个元素组成，ol(order list)和li(list item)，两者为父子关系，li需要被ol包裹着</span><br><span class="line">语法：<span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项内容<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	 <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">注意：ol当中只能嵌套li标签，如果要放其他的标签项需要放在li标签里面</span><br><span class="line">其中ol可以添加一个type属性，用来设置列表项目的符号，常见的取值有5个：A、a（字母顺序）、I、i（罗马数字顺序）、1（阿拉伯数字顺序）		默认是数字从1开始排序，用其他字母的话一律还是依照数字序开始排序</span><br><span class="line">其中ol还有另一个start属性，用来控制列表项目开始的取值（比如从0开始），注意，start的取值是数字序号，不是其他字母之类的（我自己捯饬时发现：除了数字序列，好像其他两种，在start小于等于0时都是按照数字序列来显示的）。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">②无序列表</span><br><span class="line">指的是，列表项中的内容，是没有时间、空间或者逻辑等顺序要求的。</span><br><span class="line">语法：<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	 <span class="tag">&lt;/<span class="name">ul</span>&gt;</span>(此处的ul是unorder list的缩写)</span><br><span class="line">注意：和ol一样，ul里面一样只能防止li标签。</span><br><span class="line">无序列表的项目符号默认三个项目同为黑色的实心原点（disc）。</span><br><span class="line">想要交换事项之间的位置顺序，可以使用vscode自带的快捷键alt+↑/↓来实现行的位置调动。</span><br><span class="line"></span><br><span class="line">无序列表也是有type属性，同样的type属性就是用来设置无序列表的项目符号的，取值一共有4种：disc（实心圆点）、circle（空心圆）、square（实心方块）、none（隐藏项目符号）</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">③自定义列表</span><br><span class="line">由三种标签组成，分别为：dl(definition list定义列表)、dt(definition term定义术语--列表标题)、dd(definition description定义描述--列表内容)</span><br><span class="line">语法：<span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">dt</span>&gt;</span><span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">dd</span>&gt;</span><span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">dd</span>&gt;</span><span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	 <span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line">注意：dt和dd是dl的子标签，dt和dd是兄弟标签，所以dt不能放到dd当中，dd也不能放到dt当中；dd标签可以定义多个，同时dt或dd标签是不能脱离dl单独使用的</span><br><span class="line">dd标签的内容会相较dt标签有一段缩进，这是默认存在的。（如果要进一步美化还得学习css相关的知识）</span><br></pre></td></tr></table></figure>
+<h2 id="010快速创建标签的技巧"><a class="markdownIt-Anchor" href="#010快速创建标签的技巧">#</a> 010. 快速创建标签的技巧</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">这部分将会提供一些比较实用的快捷键来提高效率，减少反复劳作</span><br><span class="line">这些主要得益于Emmet。其提高了代码编写的效率；提供了一种非常简练的语法规则；可以立刻生成对应的HTML结构。</span><br><span class="line">单标签的代码补全：</span><br><span class="line">①使用格式：标签名&#123;标签文本内容&#125;+tab或者回车键</span><br><span class="line">②使用格式：标签名&#123;标签文本内容&#125;*标签重复次数</span><br><span class="line">③使用格式：标签$&#123;标签文$本内容&#125;*标签重复次数		ps：这里的$符号实现依次递增的序号</span><br><span class="line">嵌套标签的代码补全：</span><br><span class="line">①父标签名&gt;子标签名&#123;子标签文本&#125;*子标签重复次数		一个父标签里放了5个子标签</span><br><span class="line">②父标签名*5&gt;子标签名&#123;子标签文本&#125;					创建5个父标签，每个父标签里面有个子标签</span><br><span class="line"></span><br><span class="line">综合：ol&gt;li*4&gt;a[href]			中括号中放的是属性</span><br><span class="line"></span><br><span class="line">详见shortcut_key.html文件</span><br></pre></td></tr></table></figure>
+<h2 id="011表格的使用"><a class="markdownIt-Anchor" href="#011表格的使用">#</a> 011. 表格的使用</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">表格基本语法：</span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span>(table row表格行)</span><br><span class="line">    	<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span>(table data cell 表格数据单元)</span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">注意：表格的标签嵌套也和ol和ul一样，其他的标签要放就得放到td的里面。</span><br><span class="line">一个tr代表的是一行，一个td代表的是一个单元格，要实现多行多列，要在tr中添加多个td，table中添加多个tr。同时要注意，一个普通的表格中每个tr中的td个数是相等的。</span><br><span class="line">快捷键输入法：table&gt;tr*行数&gt;td*列数</span><br><span class="line"></span><br><span class="line">接下来，讲一下表格有什么属性</span><br><span class="line">第一种：表头标签（说是说表头，实际上放哪里都没事），用来加粗并居中内容，同时语义更强，使用方法就是将td换为th(table header cell的缩写  表头单元格)即可</span><br><span class="line">第二种：绘制表格线，给table加个border属性，属性值是数值，用来定义线条的粗细</span><br><span class="line">第三种：给表格添加宽度和高度，给table添加width属性，值是一个数字，用来定义表格的总宽度，再添加一个height属性，值也是一个数字，用来定义表格的总高度</span><br><span class="line">第四种：控制表格边框的空隙或文字与边框的距离，table有cellspacing（定义是单元格之间的距离）和cellpadding（定义单元格边框和文本之间的距离）两个表示间距的属性</span><br><span class="line">第五种：使表格位于浏览器的水平居中位置，为table添加align属性（定义表格在页面中水平方向上的对齐方式，有三个取值：left、center、right）</span><br><span class="line">第六种：给表格添加颜色，为table添加bgcolor属性（修饰表格的背景颜色）、为table添加bordercolor属性（修饰表格的边框颜色）。两者的属性值直接用英语颜色如red填入即可，当然也能通过6位16进制来表现。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">表格行属性相关细节：</span><br><span class="line">①设置行高度，给tr标签增加height属性，属性值为所需数值。（注意表格的总高度是由table属性的height决定的，所以，特定某行的height高的同时，会挤压其他行的高度,但是当height值设置过高，会打破table的height限制）</span><br><span class="line">②给tr添加bgcolor属性时，设置属性值后，最终该行的颜色会根据tr标签的属性变化，其他的背景色依然听从table标签的属性值。---&gt;即浏览器通过就近原则来渲染，或者后代标签属性渲染的优先级是高于父级标签。</span><br><span class="line">③tr的align和valign属性，其中align用来设置行内所有单元格的水平对齐方式，取值有：left、center、right；valign用来设置行内所有单元格的垂直对齐属性，取值有：top、middle、bottom。其中，文本默认的对齐方式为：left、middle</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">单元格属性相关细节：</span><br><span class="line">①可以给td添加width和height以及bgcolor属性，其中调节任意单元格的高度，那么该单元格所在行的每个单元格的高度都会随之改变；调节任意单元格的宽度，那么该单元格所在列的每个单元格的宽度都会随之改变；但是设置背景色时，只会影响当前单元格。</span><br><span class="line">②td也有align和valign属性，取值同tr，同样采用就近原则。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">合并单元格：</span><br><span class="line">类别：横向合并（水平合并，要求只在本行进行）、纵向合并（垂直合并，要求只在本列进行）</span><br><span class="line">单元格的合并必定产生跨行或者跨列</span><br><span class="line">基本的实现原理为：</span><br><span class="line">①横向合并，保留合并单元格块的最左边的单元格，删除其余单元格，浏览器解析时将第一个单元格拉伸满</span><br><span class="line">②纵向合并，保留合并单元格块的最上方的单元格，删除其余单元格，。。。</span><br><span class="line">具体需要设置的标签属性，</span><br><span class="line">①为保留的tr对应的td标签添加一个colspan(跨列)属性，其属性值为合并列的总数（包含。。。），删除同一tr下一定数量的td标签。</span><br><span class="line">②为保留的tr对应的td标签添加一个rowspan(跨行)属性，其属性值为合并行的总数（包含保留的对应单元格的那一行），其他行对应相同位置的td标签通通删除掉。</span><br></pre></td></tr></table></figure>
+<p><mark>详见文件 table_course.html</mark></p>
+<h2 id="012表格的进阶使用"><a class="markdownIt-Anchor" href="#012表格的进阶使用">#</a> 012. 表格的进阶使用</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">表格标题和结构分组：</span><br><span class="line">①表格标题，就是表格的一个大标题，位于表格上方，默认水平居中显示。标签名：caption（说明文字）	语法：<span class="tag">&lt;<span class="name">caption</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">caption</span>&gt;</span></span><br><span class="line">caption是table标签的一个子标签，一般放在第一个tr标签之前。</span><br><span class="line"></span><br><span class="line">②表格分组，此时需要三个行分组标签thead（表格头）、tbody（表格体）、tfoot（表格尾）</span><br><span class="line">语法：<span class="tag">&lt;<span class="name">thead</span>&gt;</span><span class="tag">&lt;/<span class="name">thead</span>&gt;</span>;<span class="tag">&lt;<span class="name">tbody</span>&gt;</span><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span>;<span class="tag">&lt;<span class="name">tfoot</span>&gt;</span><span class="tag">&lt;/<span class="name">tfoot</span>&gt;</span></span><br><span class="line">都是table标签的子标签，在这些标签里面放入tr标签来分组。</span><br><span class="line">注意点：表格如果没有使用任何分组标签，浏览器会在渲染时把table中所有未分组的tr放在一个tbody标签里面；同时一个表格只允许使用一个thead和一个tfoot，但是允许使用多个tbody。</span><br><span class="line"></span><br><span class="line">以上是行分组，以下是列分组的相关操作：</span><br><span class="line">列分组标签是colgroup，可以把一列或者连续的几列分成一组，进行不同属性的修饰。列分组经常用来定义表格一整列单元格的颜色。基本语法：<span class="tag">&lt;<span class="name">colgroup</span>&gt;</span><span class="tag">&lt;/<span class="name">colgroup</span>&gt;</span>,可以定义一个属性span，属性值代表多少列分为一组。要划分多组，需要使用多个colgroup标签。</span><br></pre></td></tr></table></figure>
+<p><strong>tips</strong>：如果文档缩进和对齐有点错乱，可以右键选择格式化文档；vscode 自带快捷键，通过选定指定内容，然后按 ctrl+d 可以实现多光标选中内容相同的内容。</p>
+<h2 id="013网页中的颜色值和长度单位"><a class="markdownIt-Anchor" href="#013网页中的颜色值和长度单位">#</a> 013. 网页中的颜色值和长度单位</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">颜色值：</span><br><span class="line">①网页中支持140个标准的颜色英文名称，中文汉字时不能作为颜色值的</span><br><span class="line">②颜色值还能使用十六进制值来表示：#RRGGBB 来定义颜色值。注意：井号不要丢掉，井号后的字母全部要求小写，同时这种表达方式时所有浏览器都支持的。</span><br><span class="line">③最后一种颜色表示是采用RGB的方式，即RGB(red,green,blue)来定义颜色值。注意，这里RGB是不区分大小写的，括号里的数字和逗号前后可以有空格，同时这种方式也是所有浏览器都支持。</span><br><span class="line"></span><br><span class="line">长度单位：</span><br><span class="line">①绝对长度单位：固定的，用这些单位表示的长度会显示为设置的尺寸，例如：cm、mm、in(英寸)、px(像素 最常用，浏览器默认)</span><br><span class="line">②相对长度单位：指相对一个长度计算出来的长度，一般用来适配不同的设备，例如：百分比(%)。</span><br></pre></td></tr></table></figure>
+<h2 id="014块级元素和内联元素"><a class="markdownIt-Anchor" href="#014块级元素和内联元素">#</a> 014. 块级元素和内联元素</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">首先我们要知道，每个HTML元素都有默认的显示值，这两个值为：block(块 块元素)和inline(内联 行内元素)	</span><br><span class="line">①块级元素总是从新行开始，浏览器会自动在元素的前后添加一些间距，会占据可用的全部宽度，尽可能向左向右伸展，常用标签有：<span class="tag">&lt;<span class="name">p</span>&gt;</span>（段落元素）、<span class="tag">&lt;<span class="name">div</span>&gt;</span>（分块元素）、<span class="tag">&lt;<span class="name">h1</span>&gt;</span>-<span class="tag">&lt;<span class="name">h6</span>&gt;</span>（标题元素）、<span class="tag">&lt;<span class="name">ol</span>&gt;</span><span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">dl</span>&gt;</span><span class="tag">&lt;<span class="name">dt</span>&gt;</span><span class="tag">&lt;<span class="name">dd</span>&gt;</span>（列表元素）、<span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">thead</span>&gt;</span><span class="tag">&lt;<span class="name">tfoot</span>&gt;</span><span class="tag">&lt;<span class="name">tbody</span>&gt;</span><span class="tag">&lt;<span class="name">caption</span>&gt;</span>（表格元素）。</span><br><span class="line">注意：p标签是用来专门定义段落的。</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>(division分块的缩写，引申为盒子或是容器，用来定义html里面一个分块或是一个部分)，语法是<span class="tag">&lt;<span class="name">div</span>&gt;</span>分块内容<span class="tag">&lt;/<span class="name">div</span>&gt;</span>。</span><br><span class="line">    </span><br><span class="line">②内联元素不会独占一行，只占用必要的宽度，例如文本修饰元素标签：<span class="tag">&lt;<span class="name">b</span>&gt;</span>、<span class="tag">&lt;<span class="name">em</span>&gt;</span>、<span class="tag">&lt;<span class="name">strong</span>&gt;</span>、<span class="tag">&lt;<span class="name">i</span>&gt;</span>、<span class="tag">&lt;<span class="name">sub</span>&gt;</span>、<span class="tag">&lt;<span class="name">sup</span>&gt;</span>（文本修饰元素）、<span class="tag">&lt;<span class="name">a</span>&gt;</span>（链接元素）、<span class="tag">&lt;<span class="name">br</span>&gt;</span>（折行元素）、<span class="tag">&lt;<span class="name">img</span>&gt;</span>（图片元素）。此时有个特别的标签<span class="tag">&lt;<span class="name">span</span>&gt;</span>（范围元素）用来标记文本的一部分或文档的一部分。定义语法：<span class="tag">&lt;<span class="name">span</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">span</span>&gt;</span>。</span><br><span class="line">注意点：内联元素里面不能嵌套块级元素！！</span><br></pre></td></tr></table></figure>
+<h2 id="015表单的认识"><a class="markdownIt-Anchor" href="#015表单的认识">#</a> 015.<mark> 表单的认识</mark></h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">表单是用来采集用户信息的。</span><br><span class="line">而表单为了采集用户的信息，需要用到表单控件（文本框、单选框、多选框、下拉菜单、按钮等）。</span><br><span class="line"></span><br><span class="line">在html中表单通过form(表)来定义，语法：<span class="tag">&lt;<span class="name">form</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span>			如果没加子标签，可能会类似table标签</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">文本框和密码框：</span><br><span class="line">即单行文本框的实现：在form内部嵌入input标签（单标签）实现，除此之外还要定义一个type属性（来表征输入控件的类型），其中单行文本框的type值为text（默认就是这个）、密码框的type值为password</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">多行文本框（文本域控件）：</span><br><span class="line">实现方式：在form标签中嵌套textarea（文本域，双标签）标签实现，基本语法：<span class="tag">&lt;<span class="name">textarea</span>&gt;</span>文本<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span>，初次之外还可以控制显示的可见宽度之类的属性，例如cols用来指定一个文本区的可见宽度，值是一个数字；rows来指定一个文本区域中的可见行数，值是数字</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">单选与多选：</span><br><span class="line">实现方式：在form标签中嵌套input标签，并设置type属性值来实现单选或是多选；单选的type属性值为radio，多选的type取值为checkbox（复选框）。input仍然是单标签，选项直接写在标签的后面即可。</span><br><span class="line">注意点：1、单选框控件必须成组使用才有意义，每组至少需要两个单选框。2、“组”是通过name属性来建立的，凡是name值相同的就是一组。3、同组的单选框，只有一个会处在选中状态，其他的会自动呈现为未选中状态。---&gt;所以默认下没有设置name情况下，会将每个单选框视作一个组，要实现选一需要设置name属性，属性值为自取的组名。</span><br><span class="line"></span><br><span class="line">设置默认选中效果：两者方式一样，都是通过定义一个checked属性来实现，其属性值只要不为空，任何字符都可以，通常采用checked这个字符串作为它的值。当然也可以不定义属性值，只定义一个属性名</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">下拉菜单：</span><br><span class="line">实现方式：在form标签里面嵌套select标签来定义，基本语法为：<span class="tag">&lt;<span class="name">select</span>&gt;</span><span class="tag">&lt;/<span class="name">select</span>&gt;</span>,其中select标签包含一个或多个option子标签，这个的语法为：<span class="tag">&lt;<span class="name">option</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span>。</span><br><span class="line">tips1：要添加默认选择哪个option的值，要在该option标签中添加默认选择的selected属性，只要定义就行，不用给属性值。</span><br><span class="line">tips2：要设置多选下拉菜单，需要给select标签定义一个multiple（允许用户选择一个以上的值）属性。</span><br><span class="line">tips3：给select标签定义size属性，就可以定义控件默认可见行数，值是一个数字。</span><br><span class="line">注意：select标签里面只能防止option标签。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">input中的选择文件（上传文件）功能：</span><br><span class="line">实现方式：在input输入控件上定义type属性赋值为file。（不同浏览器，这个控件的显示效果可能不太相同）</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">表单label标签和只读禁用属性：</span><br><span class="line">实现方式：在form标签中嵌入label标签，基本语法为：<span class="tag">&lt;<span class="name">label</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span>,这在屏幕阅读器读到时会大声读出里面的内容；同时还能帮助我们点选难以点击的非常小的区域，只要点击那部分区域就能选中那区域的控件。当然为了实现第二种功能，我们还用为label添加一个for属性，用来定义与label相关联的表单控件，它的值为表单控件的id值（具有唯一性，一个页面不能出现两个相同的id属性值）。</span><br><span class="line"></span><br><span class="line">设置只读（内容无法更改，但是可以复制里面的内容）：给表单控件定义一个readonly只读属性即可实现，同时为了默认显示一个值，需要添加一个属性value，值为默认显示的值。</span><br><span class="line">设置无法选中（使用鼠标无法选中，默认是灰色显示的）：为表单控件添加一个disabled（禁用）属性</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">表单分组（带有边框和标题的表单控件）：</span><br><span class="line">实现方式：使用fieldset（字段集）标签，语法为：<span class="tag">&lt;<span class="name">fieldset</span>&gt;</span><span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span>，里面包含了legend（说明）标签，为fieldset元素定义了一个标题。其他表单控件放到legend标签的后面。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">表单按钮：</span><br><span class="line">表单按钮的分类共有5种：提交按钮、重置按钮、普通按钮、图像按钮、双标签button按钮</span><br><span class="line">①提交按钮：通过input标签实现，为input的type属性的值设置为submit。通过点击设置的提交按钮后，会发生：1、页面刷新了。2、输入框的内容消失了。3、浏览器地址栏中多了一个问号。</span><br><span class="line">其实点击提交后，数据会提交给网站后台的服务器，后台服务器将数据保存到数据库当中，然后服务器会给网页的表单提供一个访问地址。		那么要如何提供访问地址呢？这时候要给form标签添加一个action属性，用来反馈用户点击提交后做什么动作，事实上值就是服务器的地址；而不定义action属性值，那么默认就会把当前网页的网址当作action值。		如果要保留这些填写的值该如何设置？给form标签定义一个target属性，属性值和链接的target属性值一样，可以设置为：_blank也可以是_self。前者开一个新的网页（action后的网址），后者和之前一样。</span><br><span class="line"></span><br><span class="line">②重置按钮：将input的type属性值设置为reset。</span><br><span class="line"></span><br><span class="line">③普通按钮：没有任何功能的按钮，定义语法为将input的type属性值定义为button。要为这种按钮起名字需要添加value属性，其属性值就是按钮上显示的文字。同样，这种value设置名字的方式也使用于重置按钮和提交按钮。</span><br><span class="line"></span><br><span class="line">④图像按钮：定义方式为input中的type值设置为image，还需要添加src属性，放入图片路径。点击后，表单提交。如果图片过大，可以添加width和height属性设置成合适的大小。</span><br><span class="line"></span><br><span class="line">⑤双标签button按钮：定义语法：<span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span>,按钮的名字在标签里面定义，点击后也是实现表单提交，如果为其添加type属性，设置为button那么就会变成一个一无是处的普通按钮了。</span><br></pre></td></tr></table></figure>
+<p><em>快捷键提示</em>：如果忘记使用标签名 {内容}* 数量的方式，可以先选中想要多行复制的标签行，然后通过按住 alt+shift 键再配合↓键实现多行复制重复内容。</p>
+<h2 id="016表单数据采集和提交"><a class="markdownIt-Anchor" href="#016表单数据采集和提交">#</a> 016. 表单数据采集和提交</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在实现form表单数据采集和提交之前，我们要首先了解前后端协作的流程。前端工程师做好表单后，交给用户在浏览器上填报。用户填好信息后，点击提交按钮。数据通过互联网发给服务器，后端工程师在服务器上开发程序，接受用户提交过来的数据，最后再把数据存入数据库。</span><br><span class="line">如果按之前的表单操作那么我们是没有手机到表单的数据的，为了手机表单的数据，我们要给表单控件添加name属性，有了name之后浏览器会自动为我们手机表单的控件数据。当用户输入数据后，name定义的属性值会为我们存储输入的数据，这时候提交表单，地址栏后面除了问号后还有一串字符这里记录了用户的输入值。</span><br><span class="line">但是如果表单包含敏感信息，那么这样直接显示是相当不安全的，这里就要为form添加method属性，这个属性的属性值常用的有：get（默认值，浏览器会把手机好的表单数据，加到服务器地址的后面，提交给服务器）和post（不但能够手机表单的数据，而且不会再地址栏里面暴露隐私数据）</span><br></pre></td></tr></table></figure>
+<h2 id="017其他实用标签"><a class="markdownIt-Anchor" href="#017其他实用标签">#</a> 017. 其他实用标签</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">水平线标签：<span class="tag">&lt;<span class="name">hr</span>&gt;</span>（单标签），作用为在网页上画出一条水平分隔线。这个标签有5个重要的属性：width/size属性是用来控制水平线的宽度和高度，如果没有添加这个属性，默认水平线的宽度是横跨整个屏幕，高度为2px；noshade属性是用来规定水平线的颜色呈现为纯色，而不是由阴影的颜色；color用来定义水平线的颜色（不知道为什么，这里不能使用rgb的颜色定义，其余两种都能正常使用）；align用来调整水平线水平对齐方式（使用前提是水平线要有一定的宽度），默认对齐方式是水平居中对齐。</span><br><span class="line"></span><br><span class="line">预格式化的文本标签：<span class="tag">&lt;<span class="name">pre</span>&gt;</span>（preformatted）（双标签），语法：<span class="tag">&lt;<span class="name">pre</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span>，该元素里的文本以固定宽度的字体显示，同时保留标签内文本的空格和换行。</span><br><span class="line"></span><br><span class="line">定义一个图像映射：<span class="tag">&lt;<span class="name">map</span>&gt;</span>（双标签）,就是一个图像的热点链接，点击图片的不同区域会实现链接页面的跳转，基本语法：<span class="tag">&lt;<span class="name">map</span>&gt;</span><span class="tag">&lt;/<span class="name">map</span>&gt;</span>,他有一个必要的属性，为name，这个属性的属性值要和img标签的usemap属性相关联，在图像和地图之间创建关系。之后在map标签内部定义一个area（单标签）标签，用来定义图片的热点区域，实现相应区域的目标跳转。通过area标签可以设置区域的位置、大小、形状，该标签由三个重要的属性：①herf：用来定义热点区域链接的目标地址（互联网和本地的网页及图片地址都可以）、②shape：用来定义区域的形状，取值可以为：default（所有区域）、rect（矩形）、circle、poly（多边形）、③coords：用来定义可点击区域的坐标，要与shape属性配合使用。注意图像原点位于图像党的左上角。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">iframe标签（双标签）：</span><br><span class="line">用来在一个网页中显示另一个网页，基本语法：<span class="tag">&lt;<span class="name">iframe</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span>,这个标签有5个基本属性：①src，值是一个网页页面的路径、②width，用来控制引入页面的宽度，值是数字、③height，用来控制引入页面的高度，值是数字、④frameborder，默认引入的框架带有边框，通常将值设置为0即可、⑤scrolling滚动属性，用来控制是否显示框架的滚动条，只有三个（auto（）默认、yes、no）。</span><br><span class="line">iframe还可以作为一个链接的目标框架，iframe的target属性必须设置为iframe的name属性</span><br></pre></td></tr></table></figure>
+<h2 id="018svg的认识"><a class="markdownIt-Anchor" href="#018svg的认识">#</a> 018.SVG 的认识</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">首先我们要知道，SVG（Scalable Vector Graphics 可缩放矢量图）是基于xml语法的图像格式，所以要遵循xml语法iui。基本语法：<span class="tag">&lt;<span class="name">svg</span>&gt;</span>...(绘制各种图形)<span class="tag">&lt;/<span class="name">svg</span>&gt;</span>，svg可以当作绘制图形的画布，有两个重要的属性：width定义画布的宽度，height定义画布的高度。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">绘制矩形、圆形和椭圆形</span><br><span class="line">SVG预定义了一些形状元素可供使用：1、rect（矩形）；2、circle（圆形）；3、ellipse（椭圆）；4、line（线条）；5、poly（多线条）；6、polygon（多边形）；7、path（路径）</span><br><span class="line"></span><br><span class="line">矩形基本语法：<span class="tag">&lt;<span class="name">rect</span> /&gt;</span>,xml语法一定要求闭合，语法要求忒严格了哩。重要的属性有：width和height用来定义矩形的宽度和高度，fill定义矩形的填充颜色，stroke-width定义了矩形的边框宽度，stroke定义矩形边框的颜色,x属性是用来定义与左边界的距离，y属性是用来定义与上边界的距离，fill-opacity定义填充透明度，stroke-opacity用来定义边框的透明度（透明度的值越小，透明度越高）|如果直接用opacity则是用来设置整个元素的不透明度值，合法范围值为0~1。		圆角矩形的实现：需要多加rx和ry两个属性，值是数字，如果两者数字相等，那么就是一个圆形的角，两个值不相等就是一个椭圆形的角。</span><br><span class="line"></span><br><span class="line">圆形基本语法：<span class="tag">&lt;<span class="name">circle</span>/&gt;</span>,有三个重要的属性，其中cx和cy用来定义圆形中心的坐标，r属性定义圆的半径（如果省略前两个，圆的中心会被设置为(0,0)），之后定义stroke、stroke-width、fill（基本上svg的都有，以下就省略不写了）属性，来设置边框颜色、边框宽度和背景色填充等。</span><br><span class="line"></span><br><span class="line">椭圆形基本语法：<span class="tag">&lt;<span class="name">ellipse</span>/&gt;</span>,有四个重要的属性，cx定义椭圆中心的x坐标，cy定义椭圆中心的y坐标，rx属性定义水平半径，ry属性定义垂直半径。如果出现椭圆的堆叠，实际上堆叠的顺序并不是html书写的顺序，而是由他们的位置大小cx、cy、rx、ry来决定的。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">绘制线条、多边形和多线条：</span><br><span class="line">绘制线条使用line标签，基本语法为：<span class="tag">&lt;<span class="name">line</span>/&gt;</span>,重要属性，x1,y1，定义x，y轴上直线的起点坐标；x2,y2，定义x，y轴上直线的末端坐标。坐标的起点在画布的左上角，向右看作x轴，向下看作y轴。</span><br><span class="line">绘制多边形：</span><br><span class="line">使用polygon标签，基本语法：<span class="tag">&lt;<span class="name">polygon</span>/&gt;</span>,用来创建一个至少包含三个边的图形，有个属性points，其定义了多边形每个点的对应坐标（至少要三对坐标，坐标之间空格隔开，可以画出五角星捏）。</span><br><span class="line">绘制多线条：</span><br><span class="line">使用polyline标签，基本语法：<span class="tag">&lt;<span class="name">polyline</span>/&gt;</span>,可以创建任何只由直线组成的形状，和上面一样，有一个points属性，用来定义线条经过的各个点（要有两个及以上的坐标对，一个点显示不出来），填充fill要设置为none，不然会有一块从头点连到尾点的一块填充。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">绘制文本：</span><br><span class="line">通过text文本来进行绘制，是一个双标签，基本语法为：<span class="tag">&lt;<span class="name">text</span>&gt;</span>文本内容<span class="tag">&lt;/<span class="name">text</span>&gt;</span>，其中属性x，y用来定义文本的位置坐标，值为数字；属性font-size用来定义文本的大小，值为数字，属性text-anchor用来定义文本的对齐方式，值有：start、middle、end，各代表x，y值在文本的什么位置上。</span><br><span class="line">为什么svg不用p标签显示文本？text是绘制的对象，使用text那么就可以使用svg特有的控制文本方式了。例如旋转文本。有transform属性，属性值为：rotate(旋转角度 旋转的中心点（默认为原点）)</span><br><span class="line">此外，text标签内还能嵌入多个tspan标签，各个tspan（语法：<span class="tag">&lt;<span class="name">tspan</span>&gt;</span><span class="tag">&lt;/<span class="name">tspan</span>&gt;</span>）标签可以包含不同的格式和位置。给text文本添加链接的方式，则是让text文本嵌入到a标签内，但是这时候属性设置比较复杂，a标签要添加xlink:href属性，属性值是链接的地址（也可以定义target属性）。为什么不直接定义href属性捏？svg应用xml语法定义元素，所以还要再svg标签上定义一个命名空间的属性xmlns:xlink，属性值写为:http://www.w3.org/1999/xlink</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">绘制路径：</span><br><span class="line">通过path标签来定义一个路径，基本语法：<span class="tag">&lt;<span class="name">path</span>/&gt;</span>  应用路径我们可以绘制任意形状的图形，path中的重要属性d（draw绘制）是用来定义绘制路径的命令，这个命令属性值有很多，常用的两个命令是：M（moveto定义绘制图形的起点坐标）、L（lineto用来绘制一条直线，表示从上一个结束点到后面接的的点之间绘制一条直线）、Q（quadratic Bezier curve绘制二次贝塞尔曲线，需要在后面定义控制点和终点的坐标），后面需要跟着控制点坐标和终点坐标。其中命令的大小写代表的意义也是不同的，大写代表的是绝对定位，小写代表的是相对定位。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">成组定义属性（类似div）：</span><br><span class="line">用g标签将多个绘图元素给包裹起来，在g标签上定义公共的属性，基本语法：<span class="tag">&lt;<span class="name">g</span>&gt;</span><span class="tag">&lt;/<span class="name">g</span>&gt;</span>。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">描边属性：</span><br><span class="line">stroke（笔画属性）、stroke-width（笔画宽度属性）、stroke-linecap（笔画笔帽属性，值有：butt、round、square）、stroke-dasharray（虚线笔画属性，值是数字序列，用来定义虚线的线条与空隙的大小，至少要定义两个值），以上属性可以用在任何的线条、文本和元素的轮廓。一般定义定义在path标签中，可以放到g中。</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">模糊和阴影效果：</span><br><span class="line">添加特殊效果需要定义filter标签，基本语法：<span class="tag">&lt;<span class="name">filter</span>&gt;</span><span class="tag">&lt;/<span class="name">filter</span>&gt;</span>。内部定义x和y的属性值确定滤镜的起点坐标值。其里面包含一个或多个效果滤镜，但是里面有一个必要的id（确保唯一性）属性，用来识别过滤器，图形通过这个id指向要使用的过滤器。其中filter都是定义在defs（definitions）标签内部的，基本语法为：<span class="tag">&lt;<span class="name">defs</span>&gt;</span><span class="tag">&lt;/<span class="name">defs</span>&gt;</span>。模糊效果是通过feGaussianBlur（高斯模糊）滤镜标签来创建的，需要定义在filter标签内部，基本语法为：<span class="tag">&lt;<span class="name">feGaussianBlur</span>/&gt;</span>,再通过stdDeviation属性定义模糊的数量，值越大模糊程度就越高。阴影效果可以通过feOffset滤镜和feBlend滤镜来实现。原理是将一个SVG图形、图像或元素在xy平面上做一定的偏移，定义在filter内部，基本语法为<span class="tag">&lt;<span class="name">feOffset</span>/&gt;</span>（有属性dx和dy（在x和y方向上阴影的偏移量），in属性表示阴影图像的来源，值有：SourceAlpha和SourceGraphic）和<span class="tag">&lt;<span class="name">feBlend</span>/&gt;</span>定义in属性，值为SourceGraphic</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">线性渐变和径向渐变：</span><br><span class="line">SVG中主要有两种渐变类型：线性渐变（→，用linearGradient元素来定义，必须嵌套在defs标签内部，双标签，语法为：<span class="tag">&lt;<span class="name">linearGradient</span>&gt;</span><span class="tag">&lt;/<span class="name">linearGradient</span>&gt;</span>,有两组坐标属性，x1、y1、x2、y2，用来定义线性渐变的开始位置和结束位置，通过左边不同会产生垂直、水平、角度渐变,可以有多种颜色，每种颜色用stop标签来指定，基本语法：<span class="tag">&lt;<span class="name">stop</span>/&gt;</span> 一般有两个属性，offset属性用来定义渐变颜色的开始和结束位置，属性值是一个描述相对位置的百分比，stop-color的属性用来定义渐变的颜色，取值为任何的合法颜色值）和径向渐变（↓，应用radialGradient元素来定义，也必须嵌套在defs标签当中，基本语法：<span class="tag">&lt;<span class="name">radialGradient</span>&gt;</span><span class="tag">&lt;/<span class="name">radialGradient</span>&gt;</span>,有唯一id属性，cx、cy、r定义了最外面的圆，fx、fy定义了最里面的那个圆，同样颜色可以由两种或多种组成，每种颜色由stop指定，也要定义offset和stop-color属性）。</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="css的三种样式"><a class="markdownIt-Anchor" href="#css的三种样式">#</a> CSS 的三种样式</h2>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">行内样式、内部样式、外部样式。具体的解说待我补充！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！</span><br></pre></td></tr></table></figure>
+<hr>
+<p>简单选择器的分类：</p>
+<table>
+<thead>
+<tr>
+<th>选择器分类</th>
+<th>选择器定义语法</th>
+<th>例子</th>
+<th>例子说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID 选择器</td>
+<td>#id</td>
+<td>#firstname</td>
+<td>选择 id=&quot;firstname&quot; 的元素</td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>.class</td>
+<td>.intro</td>
+<td>选择所有带有 class=&quot;introduction&quot; 的元素</td>
+</tr>
+<tr>
+<td>类选择器（带有元素）</td>
+<td>element class</td>
+<td>p intro</td>
+<td>只选择带有 class=&quot;introduction&quot; 的 &lt;p&gt; 元素</td>
+</tr>
+<tr>
+<td>通用选择器</td>
+<td>*</td>
+<td>*</td>
+<td>选择所有元素</td>
+</tr>
+<tr>
+<td>元素选择器</td>
+<td>element</td>
+<td>p</td>
+<td>选择所有 &lt;p&gt;</td>
+</tr>
+<tr>
+<td>分组选择器</td>
+<td>element,element,…</td>
+<td>div,p</td>
+<td>选择所有 &lt;div&gt; 元素和所有 &lt; p &gt; 元素</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>组合选择器的分类：</p>
+<p>后代选择器：匹配作为指定元素后代的所有元素、子选择器：只能选择作为某元素的子元素，不能选择道孙辈的元素、相邻的兄弟选择器、一般兄弟选择器。</p>
+<table>
+<thead>
+<tr>
+<th>选择器分类</th>
+<th>选择器定义语法</th>
+<th>例子</th>
+<th>例子说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>后代选择器</td>
+<td>element element</td>
+<td>div p</td>
+<td>选择 &lt;div&gt; 元素内的所有 &lt; p &gt; 元素</td>
+</tr>
+<tr>
+<td>子选择器</td>
+<td>element&gt;element</td>
+<td>div&gt;p</td>
+<td>选择所有父元素是 &lt;div&gt; 元素的 &lt; p &gt; 元素</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>CSS 伪类选择器（属于类选择器中的一种，根据特定状态选取元素，基本语法为 <code>selector:鼠标行为&#123;&#125;</code> ）</p>
+<p>特别说明：</p>
+<ol>
+<li>冒号和后面的鼠标行为，没有任何空格，必须连接在一起。</li>
+<li>四个伪类选择器必须按照以上介绍的顺序书写（:link,:visited,:hover,:active），否则在浏览器中部分样式不能实现。</li>
+<li>伪类选择器全部一起使用的情况，主要是应用在超链接上，偶尔也会独立使用在其他标签上面。</li>
+<li>伪类选择器应用在其他元素上时，只能实现 active 激活瞬间和 hover 鼠标悬停效果。</li>
+</ol>
+<hr>
+<p>CSS 伪元素选择器（通过该选择器，可以设置元素指定部分的样式。主要用来设置元素内文本的首字母，首行的样式、或是在元素内容之前或之后插入其他内容，基本语法为 <code>selector::pseudo-element&#123;&#125;</code> ）</p>
+<p>伪元素选择器总共有五种：① <code>::first-letter</code> （用来实现向文本的首个字符添加特殊样式）、② <code>::first-line</code> （用来实现向文本的首行添加特殊样式）、③ <code>::before</code> （用来实现在元素内容之前插入内容）、④ <code>::after</code> （用来实现在元素内容之后插入内容）、⑤ <code>::selection</code> （用来更改选中文本的样式）</p>
+<p>注意点：1. 使用伪元素选择器向前向后插入内容时，必须配合 content 才能实现效果，向前向后插入的内容都需要符合 CSS 样式声明的基本语法。2.selection 伪元素选择器只支持以下几种样式声明：color（文本颜色），background（背景），cursor（鼠标样式），outline（描边效果）。</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>例子</th>
+<th>例子描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>::first-letter</td>
+<td>p::first-letter</td>
+<td>选择每个 &lt;p&gt; 元素的首字母</td>
+</tr>
+<tr>
+<td>::first-line</td>
+<td>p::first-line</td>
+<td>选择每个 &lt;p&gt; 元素的首行</td>
+</tr>
+<tr>
+<td>::after</td>
+<td>p::after</td>
+<td>在每个 &lt;p&gt; 元素之后插入内容</td>
+</tr>
+<tr>
+<td>::before</td>
+<td>p::before</td>
+<td>在每个 &lt;p&gt; 元素之前插入内容</td>
+</tr>
+<tr>
+<td>::selection</td>
+<td>p::selection</td>
+<td>选择用户选择的元素部分</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>CSS 属性选择器（是根据属性或属性值来查找元素，基本语法 <code>Element[attribute]</code>  或 <code>Element[attribute=&quot;value&quot;]</code> , 即查找带有该属性的元素，然后添加样式声明）</p>
+<p>该种选择器总共有四种属性：</p>
+<ol>
+<li>
+<p><code>[attribute]</code> ：来查找 HTML 结构中，带有 attribute 属性的所有元素。</p>
+</li>
+<li>
+<p><code>[attribute=&quot;value&quot;]</code> ：来查找 HTML 结构中，带有 attribute 属性，并且属性值为 value 的元素。</p>
+</li>
+<li>
+<p><code>[attribute~=&quot;value&quot;]</code> : 来查找 HTML 结构中，带有 attribute 属性，并且在多个属性值中包含 value 的元素。</p>
+</li>
+<li>
+<p><code>[attribute|=&quot;value&quot;]</code> : 来查找 HTML 结构中带有 attribute 属性，并且属性值以 value 或者是 value - 开头的元素，该属性的值只能有一个，不能有多个。</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>例子</th>
+<th>例子描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[attribute]</td>
+<td>[target]</td>
+<td>选择带有 target 属性的所有元素。</td>
+</tr>
+<tr>
+<td>[attribute=value]</td>
+<td>[target=_blank]</td>
+<td>选择带有 target=&quot;_blank&quot; 属性的所有元素。</td>
+</tr>
+<tr>
+<td>[attribute~=value]</td>
+<td>[title~=flower]</td>
+<td>选择带有包含 &quot;flower&quot; 一词的 title 属性的所有元素。</td>
+</tr>
+<tr>
+<td>[attribute|=value]</td>
+<td>[lang|=en]</td>
+<td>选择带有以 &quot;en&quot; 开头的 lang 属性的所以有元素。</td>
+</tr>
+<tr>
+<td>[attribute^=value]</td>
+<td>a[href^=“https”]</td>
+<td>选择其 href 属性值以 &quot;https&quot; 开头的每个 &lt;a&gt; 元素。</td>
+</tr>
+<tr>
+<td>[attribute$=value]</td>
+<td>a[href$=&quot;.pdf&quot;]</td>
+<td>选择其 href 属性值以 &quot;.pdf&quot; 结尾的每个 &lt;a&gt; 元素。</td>
+</tr>
+<tr>
+<td>[attribute*=value]</td>
+<td>a[href*=“w3school”]</td>
+<td>选择其 href 属性值包含子串 &quot;w3school&quot; 的每个 &lt;a&gt; 元素。</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<hr>
+<p><strong>总结</strong></p>
+<ul>
+<li>简单选择器和组合选择器，可以完成元素的查找。</li>
+<li>其他选择器可以更加精准高效的查找元素，从而能提高我们编码速度。</li>
+<li>属性选择器，在实际开发的过程中，大部分会应用在表单控件中，因为表单控件可添加的属性比较多。</li>
+</ul>
+<hr>
+<h2 id="css的文本操作"><a class="markdownIt-Anchor" href="#css的文本操作">#</a> CSS 的文本操作</h2>
+<p><strong>文本颜色和大小写转化</strong></p>
+<p><em>颜色调整：</em></p>
+<p>通过声明 color 属性来设置文本的颜色。具体的使用方法见下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>:xxxx;(这里可以是颜色名称，例如:purple、也可以是十六进制颜色值，例如：<span class="number">#A020F0</span>、也可是RGB颜色值，例如：<span class="built_in">rgb</span>(<span class="number">160</span>,<span class="number">32</span>,<span class="number">240</span>))</span><br><span class="line">&#125;</span><br><span class="line">↑，连接到<span class="selector-tag">html</span>文件后，主体（<span class="selector-tag">body</span>）内的内容会变为xxxx颜色</span><br><span class="line">注意css中的注释是<span class="comment">/* */</span>，不支持//作为注释</span><br></pre></td></tr></table></figure>
+<p><em>强制转换文本中的单词和字母的大小写：</em></p>
+<p>通过使用 text-transform 属性来实现。具体的使用方法见下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-class">.transform</span> &#123;</span><br><span class="line">    <span class="attribute">text-transform</span>:xxxx;(这里只有三个值可以填写：<span class="number">1</span>、uppercase（文本被转换为大写）；<span class="number">2</span>、lowercase（文本被转换为小写）；<span class="number">3</span>、capitalize（每个单词的首字母被转换为大写）。这个属性主要用来设置英文的文本，对中文无效)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p><strong>文本对齐和文本间距</strong></p>
+<p><em>文本对齐的方式：</em></p>
+<p>①水平对齐方式。②垂直对齐方式。</p>
+<p><strong>①</strong> 水平对齐用 <code>text-align</code> （之前学过）样式属性来实现效果，基础操作共有三种属性值： <code>left</code> 、 <code>right</code> 、 <code>center</code> 。其他属性值有： <code>justify</code> （使用后每一行都有相等的宽度，而且左右的边界是对齐的，想杂志和报纸排版一样）</p>
+<p><strong>②</strong> 垂直对齐用 vertical-align 样式属性实现效果，值有 5 个： <code>baseline</code> （基线对齐）、 <code>text-top</code> （文本顶部对齐）、 <code>textbottom</code> （文本底部对齐）、 <code>sub</code> （下角标对齐）、 <code>super</code> （上角标对齐）</p>
+<hr>
+<p><em>文本的间距设置方式：</em></p>
+<p>通过声明 CSS 的 <code>text-indent</code>  属性可以实现，使用长度值或百分比来设置文本缩进，具体实现见下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">text-indent</span>:xxxx;(长度值可以是绝对单位（几px），也可以是相对单位（几<span class="selector-tag">em</span>，缩进的宽度为字符宽度的倍数，一般设置为<span class="number">2em</span>，即空两格），还可以是百分比缩进，根据父元素的宽度计算得到（较少使用）)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>letter-spacing</code>  属性用来指定中文文字或英文字幕之间的空隙。</p>
+<p><code>line-height</code>  属性用来指定行与行之间的高度，也就是行高，属性值常用的有三个：① <code>normal</code> （默认值，浏览器会根据字符大小自动设置一个行高）②一个数字（比如 1.5，此数字与当前的字符大小相乘计算得到，推荐使用）③绝对值（比如 20px,-5px, 设置固定的行间距）。</p>
+<p><code>word-spacing</code>  属性用来指定文本中单词的间距，只对英文有效。</p>
+<p><code>white-space</code>  属性指定了如何处理元素内部的空白，有个常用的属性： <code>nowrap</code> （不管包含文本的元素宽度是多少，文本都不会换行，知道遇见 &lt;br&gt; 标签为止）。</p>
+<p><mark><em><strong>归纳表格：</strong></em></mark></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text-align</code></td>
+<td>指定文本的水平方式</td>
+</tr>
+<tr>
+<td><code>vertical-align</code></td>
+<td>设置一个元素的垂直对齐方式</td>
+</tr>
+<tr>
+<td><code>letter-spacing</code></td>
+<td>指定文本钟字符之间的间隙</td>
+</tr>
+<tr>
+<td><code>line-height</code></td>
+<td>指定行高</td>
+</tr>
+<tr>
+<td><code>text-indent</code></td>
+<td>指定文本块钟第一行的缩进</td>
+</tr>
+<tr>
+<td><code>white-space</code></td>
+<td>指定如何处理一个元素内部的空白</td>
+</tr>
+<tr>
+<td><code>word-spacing</code></td>
+<td>指定文本中单词之间的空隙</td>
+</tr>
+</tbody>
+</table>
+<h2 id="css文本装饰"><a class="markdownIt-Anchor" href="#css文本装饰">#</a> CSS 文本装饰</h2>
+<p><strong>为文本添加装饰线</strong>通过 <code>text-decoration-line</code>  属性实现，可以结合一个以上的值。具体的值有三个：① <code>overline</code> ：在文本上方添加线条修饰。② <code>line-through</code> ：在文本中间添加线条修饰。③ <code>underline</code> ：在文本下方添加线条修饰。***ps:*** 要设置多种装饰线则要将多个属性值之间用空格隔开。</p>
+<p><strong>为文本设置装饰线的颜色</strong>通过 <code>text-decoration-color</code>  属性实现，属性值为任意合法的颜色值。</p>
+<p><strong>为装饰线指定风格</strong>通过 <code>text-decoration-style</code>  属性实现，属性值有 5 个： <code>solid</code> ：实线、 <code>double</code> ：双实线、 <code>dotted</code> ：圆点线、 <code>dashed</code> ：虚线、 <code>wavy</code> ：波浪线。之后通过 <code>text-decoration-thickness</code>  属性为线条设置厚度。属性值有三种设置方法：①auto 默认值（不确定，和所修饰的文字大小有关系）、②px（像素大小，是一个绝对值）③%（是一个相对值，根据修饰文字的高度计算出来的）</p>
+<p>以上这些属性有点过于长了，可以采用简化的写法，举例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h4</span> &#123;</span><br><span class="line">	<span class="attribute">text-decoration</span>: underline red double <span class="number">5px</span>;(line、<span class="attribute">color</span>、style、thickness对应的一个或多个属性值（可以没有顺序），其中<span class="attribute">text-decoration-line</span>是必须设置的，其他三个可选)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>***ps：***HTML 中的所有链接默认都有下划线，如果想要使链接的样式没有下划线，需要给 a 元素声明 <code>text-decoration: none;</code>  可以去除链接的超链接。</p>
+<p><mark><em><strong>归纳表格：</strong></em></mark></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text-decoration</code></td>
+<td>在一个声明中设置所有的文字装饰属性</td>
+</tr>
+<tr>
+<td><code>text-decoration-color</code></td>
+<td>指定文本装饰的颜色</td>
+</tr>
+<tr>
+<td><code>text-decoration-line</code></td>
+<td>指定要使用的文本装饰的种类（下划线、上划线等）</td>
+</tr>
+<tr>
+<td><code>text-decoration-style</code></td>
+<td>指定文本装饰的样式（实心、点状等）</td>
+</tr>
+<tr>
+<td><code>text-decoration-thickness</code></td>
+<td>指定文本装饰线的厚度</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="设置字体"><a class="markdownIt-Anchor" href="#设置字体">#</a> 设置字体</h2>
+<p>在 CSS 中，使用 <code>font-family</code>  属性指定一个文本的字体，属性值是一个字体的名称。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">font-family</span>:字体名称</span><br><span class="line"></span><br><span class="line">CSS中英文字体有五类：<span class="number">1</span>、Serif（有衬线字体）。<span class="number">2</span>、Sans-serif（无衬线字体）。<span class="number">3</span>、Monospace（单空格字体，所有的字母都有相同的固定宽度）。<span class="number">4</span>、Cursive（草书字体）。<span class="number">5</span>、Fantasy（幻想字体）。</span><br><span class="line">CSS中中文字体比较通用的中文字体有两个：微软雅黑（Microsoft）、苹方简（Mac）</span><br></pre></td></tr></table></figure>
+<p>在 css 中设置的字体，用户的电脑里面没有要怎么办？可以定义几个样式备选，例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h3</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>:<span class="string">&quot;Courier New&quot;</span> ,<span class="string">&quot;BrushScript MT&quot;</span> ,Copperplate;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">会从前到后选择，遇到系统中存在的字体，则会选择排在最前的字体作为当前显示的字体。如果系统中一个都没有，则会使用系统默认的字体作为显示字体。</span><br></pre></td></tr></table></figure>
+<p>***ps:*** 一般来说多个单词的字体，一般要用 <code>''</code>  或 <code>&quot;&quot;</code>  来引起来。</p>
+<p>设置字号：CSS 中通过 <code>font-size</code>  属性设定文本的大小，属性值可以是绝对大小（当页面输出的物理尺寸已知时很常用）也可以是相对大小（相对周围元素的大小，使用 em 来进行设置，一般来说会根据继承下来的父元素尺寸计算得到；除此之外还可以使用 % 这个单位，相对于父元素的大小来计算文本尺寸的；如果嵌套了多层，有了好多继承关系，为了厘清相对大小关系，可以使用 rem (relative to the root element) 来计算大小 **[html 文档中的根元素是 html]**）。</p>
+<p>** 注意点：** 如果不指定字体的大小，正常的文本，比如段落会继承祖先的元素，如果祖先也没有设置字体的大小就会使用浏览器的默认字号（16px）。</p>
+<hr>
+<h2 id="设置字体风格和样式简写"><a class="markdownIt-Anchor" href="#设置字体风格和样式简写">#</a> 设置字体风格和样式简写</h2>
+<p><strong>文本倾斜</strong>主要使用 <code>font-style</code>  属性。属性值有三个：1、normal（文本正常显示）。2、italic（文本倾斜显示）。3、oblique（支持度较低，实现效果类似 italic）。</p>
+<p><strong>文本粗细设置</strong>主要使用 <code>font-weight</code>  属性。属性值设置有两种方式：名称和数值。名称有四个：lighter（细体，对应数值 100）、normal（正常字体，对应数值 400）、bold（加粗字体，对应数值 700）、bolder（更粗字体，对应数值 900）。数值有九个：从 100 到 900，每个增加 100。</p>
+<p><code>font-variant</code>  属性（只对英文有效）指定了文本<strong>是否应以小型大写字符显示</strong>，共有两个属性值：1、normal（正常显示）。2、small-caps（表示设置为小型大写字母）。</p>
+<p>同样的为了缩短代码，以上属性可以简写，例子如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">P</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>: oblique <span class="number">100</span> small-caps <span class="number">30px</span>/<span class="number">30px</span> 华为仿宋;(<span class="attribute">font-style</span>、<span class="attribute">font-variant</span>、<span class="attribute">font-weight</span>、<span class="attribute">font-size</span>/<span class="attribute">line-height</span>、<span class="attribute">font-family</span>组合在一起，中间用空格隔开。其中<span class="attribute">font-size</span>和<span class="attribute">font-family</span>这两个值是必须的，其他值缺少就采用他们的默认值)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="css谷歌字体和icon图标"><a class="markdownIt-Anchor" href="#css谷歌字体和icon图标">#</a> CSS 谷歌字体和 Icon 图标</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">我们在css中的<span class="selector-tag">body</span>中的<span class="attribute">font-family</span>中不仅可以使用<span class="selector-tag">HTML</span>中的标准字体，还可以使用谷歌字体(免费使用、<span class="number">1000</span>多种选择)</span><br><span class="line">语法形式：</span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	<span class="attribute">font-family</span>: <span class="string">&quot;和下面引用链接的字体一样&quot;</span>, serif;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">使用谷歌字体，要在<span class="selector-tag">html</span>引用中使用如下链接：&quot;https://fonts.googleapis.com/css?family=字体<span class="string">&quot;（要使用多个字体可以使用|管道隔开，即=字体1|字体2|字体3,同时还能加上各种特效，在网址字体后面加上&#x27;&amp;effect=特效名&#x27;即可，同样多个特效也可以使用|管道隔开）</span></span><br><span class="line"><span class="string">再在html文件中引入有上面body的css文件（多字体时，给每个p标签设置class类，在css中进一步单独设置字体采用，见下例）（引入特效时，要在class上加上font-effect-特效名）</span></span><br><span class="line"><span class="string">p.a &#123;</span></span><br><span class="line"><span class="string">    font-family: &quot;</span>Audiowide<span class="string">&quot;, sans-serif;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>还可以通过图标库，将图标添加到 HTML 的页面当中。</p>
+<p>（这里考虑了这个<a target="_blank" rel="noopener" href="https://fontawesome.com/">网站</a>）</p>
+<p>然后可以在后面的 p 标签内加 i 标签，定义上 class 属性为： <code>fas fa-名称</code></p>
+<p>Icon 字体图标的强大之处在于：<strong>可以将这个图标当成是文本，可以任意地添加样式</strong></p>
+<hr>
+<h2 id="css选择器地权重"><a class="markdownIt-Anchor" href="#css选择器地权重">#</a> CSS 选择器地权重</h2>
+<p>多个选择器都来修饰同一个元素，优先级该要如何判断。</p>
+<p><mark><strong>行内样式 &gt; ID 选择器 &gt; 类选择器 &gt; 元素选择器 &gt; 通用选择器</strong></mark></p>
+<p>更复杂的话，可以根据权重值来判断采用哪个选择器。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>选择器</th>
+<th>例子</th>
+<th>权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>通用选择器</td>
+<td><code>*</code></td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>元素选择器</td>
+<td><code>h1,div,p</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>类选择器</td>
+<td><code>.active,.light</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>ID 选择器</td>
+<td><code>#box,#btn</code></td>
+<td>100</td>
+</tr>
+<tr>
+<td>5</td>
+<td>行内选择器</td>
+<td><code>&lt;h1 style=&quot;...&quot;&gt;</code></td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line"><span class="selector-id">#box</span> <span class="selector-tag">p</span> <span class="selector-class">.light</span> &#123; // 优先级：<span class="number">100</span> + <span class="number">1</span> + <span class="number">10</span> = <span class="number">111</span></span><br><span class="line">    <span class="attribute">color</span>: red</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>选择器选择的范围越小，越精确，优先级就越高！</strong></p>
+<hr>
+<h2 id="css添加边框"><a class="markdownIt-Anchor" href="#css添加边框">#</a> CSS 添加边框</h2>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border-style</span>:</span><br><span class="line">指定了要显示什么样的边框</span><br><span class="line">允许使用以下值：</span><br><span class="line">dotted:定义一个点状的边框</span><br><span class="line">dashed:定义一个虚线边框</span><br><span class="line">solid:定义一个实线边框</span><br><span class="line">double:定义一个双倍的边框</span><br><span class="line">none:定义无边框</span><br><span class="line">hidden:定义一个隐藏的边框</span><br><span class="line"></span><br><span class="line">当表格单元格相邻边框产生冲突时，优先级：hidden&gt;solid&gt;none</span><br><span class="line">各个方向上的边框设置，上边框线：border-top-style，下边框线：border-bottom-style，左：border-left-style，右：border-right-style</span><br><span class="line"></span><br><span class="line">逆天设置示例:<span class="number">1</span>、border-style:dotted solid double dashed;</span><br><span class="line">这种设置，按照上右下左的顺序，依次为点，实，双，虚</span><br><span class="line"><span class="number">2</span>、<span class="attribute">border-style</span>:dotted solid double;</span><br><span class="line">这种设置按照上，左右，下，。。。</span><br><span class="line"><span class="number">3</span>、<span class="attribute">border-style</span>:dotted solid;</span><br><span class="line">这种设置按照上下，左右，。。。</span><br><span class="line"></span><br><span class="line"><span class="attribute">border-width</span>:</span><br><span class="line">可以用来设置边框的宽度，单位可以为px、em，也可以使用预定义的三个值，thin、medium、thick</span><br><span class="line">同时边框宽度也可以使用混合简写的方法，上下左右都不一样捏</span><br><span class="line"></span><br><span class="line">border-color:</span><br><span class="line">可以用来设置四个边框的颜色</span><br><span class="line">属性值可以为：颜色名称、十六进制颜色值、RGB颜色值，也可以设置为transparent（透明）</span><br><span class="line">同样可以使用混合简写</span><br><span class="line"></span><br><span class="line">当然边框也可以使用速记属性（和font类似）</span><br><span class="line">例子：border: <span class="number">5px</span> solid red;</span><br><span class="line">中间的<span class="attribute">border-style</span>一定要声明</span><br><span class="line">要单独设置一条边可以采用<span class="attribute">border-bottom</span>这类的标签</span><br><span class="line"></span><br><span class="line">tips:样式中给元素设置的宽高，是不包含该元素边框宽高的，它只包含元素<span class="number">1</span>内容的宽高。</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="css列表"><a class="markdownIt-Anchor" href="#css列表">#</a> CSS 列表</h2>
+<p>列表分为两种：</p>
+<p>1、无序列表（OL）</p>
+<p>2、有序列表（UL）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">list-style-type</span>:</span><br><span class="line">可以设置不同的列表项标记，属性值可以为：circle（空心圆点）、disc（实心圆点）、square（实心方点）、decimal（数字）、upper-roman（大写罗马字母）、lower-alpha（小写字母）等。</span><br><span class="line">list-style-image:</span><br><span class="line">指定一个图像作为列表项的标记，属性值为<span class="built_in">url</span>(<span class="string">背景图片路径</span>)</span><br><span class="line">通过list-style-position:</span><br><span class="line">来设置位置，属性值有两个：outside表示标记在列表项之外,inside表示标记在列表项内部</span><br><span class="line"></span><br><span class="line">如果不想要显示列表项标记，可以使用list-style-type:none;来去掉</span><br><span class="line"></span><br><span class="line">同样列表属性也是可以使用简写，<span class="attribute">list-style</span>即可用来在一个声明中设置所有的列表属性，属性值按照，<span class="attribute">list-style-type</span>、<span class="attribute">list-style-position</span>、<span class="attribute">list-style-image</span>的顺序来写，某值缺少则使用默认的。</span><br><span class="line"></span><br><span class="line">除此之外，还能用颜色来装饰列表，有<span class="attribute">background</span>（值为RGB）和<span class="attribute">padding</span>（值为像素）的属性</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>list-style</td>
+<td>在一个声明中设置一个列表的所有属性</td>
+</tr>
+<tr>
+<td>list-style-image</td>
+<td>指定一个图像作为列表项的标记</td>
+</tr>
+<tr>
+<td>list-style-position</td>
+<td>指定列表项标记的位置</td>
+</tr>
+<tr>
+<td>list-style-type</td>
+<td>指定 list-item 标记的类型</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="css背景属性"><a class="markdownIt-Anchor" href="#css背景属性">#</a> CSS 背景属性</h2>
+<p>css 中设置 body 占满整个界面：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span>,<span class="selector-tag">body</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line">如果直接用<span class="selector-tag">body</span>，没有加上<span class="selector-tag">html</span>那会宽度为全部，高度为<span class="number">0</span>，因为<span class="selector-tag">body</span>的<span class="attribute">height</span>参考的是其上方的<span class="selector-tag">html</span>标签的高度，<span class="selector-tag">html</span>标签高度为<span class="number">0</span>，所以<span class="number">0</span>*<span class="number">100%</span>=<span class="number">0</span>。</span><br><span class="line"></span><br><span class="line">添加背景图片的语法：</span><br><span class="line"><span class="attribute">background-image</span>:<span class="built_in">url</span>(<span class="string">图片路径</span>); // 默认会采用平铺方式填满整个屏幕</span><br><span class="line">如果不要平铺，可以采用以下语法：</span><br><span class="line">backgroung-repeat:no-repeat; //这样只能看到一张图片，其余为空白。</span><br><span class="line"></span><br><span class="line">要求图片在背景中间显示，要设置以下属性</span><br><span class="line"><span class="attribute">background-position</span>:</span><br><span class="line">第一个属性值是水平方向上的对齐，第二个属性值是垂直方向上的对齐方式。</span><br><span class="line">第一个值：</span><br><span class="line">属性值为left表示左对齐，</span><br><span class="line">属性值为center表示居中对齐，</span><br><span class="line">属性值为right表示右对齐。</span><br><span class="line"></span><br><span class="line">第二个值：</span><br><span class="line">属性值为top,表示垂直向上对齐</span><br><span class="line">属性值为center，表示垂直居中对齐</span><br><span class="line">属性bottom，表示垂直向下对齐</span><br><span class="line"></span><br><span class="line">--------------------------------------</span><br><span class="line">实现页面滚动滑动，但是背景不动，需要设置以下属性：</span><br><span class="line">background-attachment:</span><br><span class="line">属性值为：fixed:图片固定；scroll:同时滚动</span><br><span class="line"></span><br><span class="line">设置背景颜色</span><br><span class="line">background-color:</span><br><span class="line">属性值为：<span class="number">1</span>、颜色名称。<span class="number">2</span>、十六进制颜色值。<span class="number">3</span>、RGB颜色值。</span><br><span class="line"></span><br><span class="line">当然也能精简写，一个background容纳一切。</span><br></pre></td></tr></table></figure>
+<p>**tips:** 新的颜色值表示方法： <code>rgba()</code> ，即 rgb 颜色值加上透明度 alpha 值（是一个介于 0 &lt;完全透明&gt;～1 &lt; 完全不透明 &gt; 的值）。例子： <code>background-color:rgba(0,0,0,0.5)黑色半透明</code></p>
+<p><em><strong>总结汇总：</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>background-color</code></td>
+<td>设置背景颜色</td>
+</tr>
+<tr>
+<td><code>background-image</code></td>
+<td>设置的背景图片，设置背景图片默认会产生平铺</td>
+</tr>
+<tr>
+<td><code>background-position</code></td>
+<td>用来调整背景图片位置的，默认取消平铺，背景图片在容器左上角；取值为一组值： <code>x y</code> ；x 水平位置，y 垂直位置</td>
+</tr>
+<tr>
+<td><code>background-repeat</code></td>
+<td>用来解决平铺的：有四个取值： <code>repeat</code> ， <code>no-repeat</code> ， <code>repeat-x</code> ， <code>repeat-y</code></td>
+</tr>
+<tr>
+<td><code>background-attachment</code></td>
+<td>被称之为背景附着，也可以称之为，背景固定和滚动，两个取值 <code>fixed</code> ， <code>scroll</code> ，以上五种属性为单一属性</td>
+</tr>
+<tr>
+<td><code>background</code></td>
+<td>为复合属性，一个属性后面可以跟多个取值: <code>background:color image repeat position attachment;</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="精灵图"><a class="markdownIt-Anchor" href="#精灵图">#</a> 精灵图</h2>
+<p>又称雪碧图、妖怪图</p>
+<p>基本原理为将页面中使用到的各种图片进行分类，整齐划一地摆放在一张背景透明的图片上，通过调整位置显示出精灵图中的一个元素。</p>
+<p>移动的语法为： <code>background-position:</code></p>
+<p>一般默认左上角为原点，对应图片里面的元素横纵坐标均为负的。</p>
+<hr>
+<h2 id="css轮廓"><a class="markdownIt-Anchor" href="#css轮廓">#</a> CSS 轮廓</h2>
+<p>轮廓是元素周围画的一圈线，在边框之外。能让元素在视觉上能有突出的显示。属性有： <code>outline-style</code> ：轮廓样式； <code>outline-color</code> ：轮廓颜色； <code>outline-width</code> ：轮廓宽度； <code>outline-offset</code> ：轮廓偏移； <code>outline</code> ：轮廓简写</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">outline-style</span>:</span><br><span class="line">属性值有dotted，定义一个点状轮廓</span><br><span class="line">dashed定义一个虚线轮廓</span><br><span class="line">solid定义一个实现轮廓</span><br><span class="line">double定义一个双线轮廓</span><br><span class="line">none定义一个无轮廓</span><br><span class="line">hidden定义一个隐藏的轮廓</span><br><span class="line"></span><br><span class="line">outline-width:</span><br><span class="line">属性值有thin：一般为<span class="number">1px</span></span><br><span class="line">medium：一般为<span class="number">3px</span></span><br><span class="line">thick：一般为<span class="number">5px</span></span><br><span class="line">一个特定的尺寸：以px、em为单位</span><br><span class="line"></span><br><span class="line">outline-color：</span><br><span class="line">属性值有颜色名称</span><br><span class="line">十六进制颜色值</span><br><span class="line">RGB颜色值</span><br><span class="line"></span><br><span class="line">outline: outline-width <span class="built_in">outline-style</span>(必须) outline-color</span><br><span class="line"></span><br><span class="line">outline-offset:</span><br><span class="line">用来设置轮廓和元素之间的空隙（透明的）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><em><strong>汇总：</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>outline</code></td>
+<td>一个速记属性，用于在一个声明中设置轮廓宽度、轮廓样式和轮廓颜色</td>
+</tr>
+<tr>
+<td><code>outline-color</code></td>
+<td>设置轮廓的颜色</td>
+</tr>
+<tr>
+<td><code>outline-offset</code></td>
+<td>指定轮廓与元素的边缘或边界之间的空 i 教案</td>
+</tr>
+<tr>
+<td><code>outline-style</code></td>
+<td>设置轮廓的样式</td>
+</tr>
+<tr>
+<td><code>outline-width</code></td>
+<td>设置轮廓的宽度</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="css边距"><a class="markdownIt-Anchor" href="#css边距">#</a> CSS 边距</h2>
+<p>用来在元素周围创造空间，控制元素边框外的距离，可以通过 margin-left、margin-top、margin-bottom、margin-right 等属性设置元素的左边、上边、下边、右边的外边距。所有的边距属性都有以下值：1、auto（浏览器自动计算的边距）；2、length（以 px、pt（point，是一个绝对单位，中文为磅，常用于印刷中，1 磅 = 0.376mm）、cm 等为单位指定边距）；3、%（以父元素宽度的百分比来指定边距）。后两者都可以取负值，表示减少外边距的空间大小。</p>
+<p>同时为了简化代码，可以在一个 margin 属性中指定所有的边距属性（直接干上 4 个 px）。</p>
+<p><em><strong>汇总：</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>margin</code></td>
+<td>一个速记属性，用于在一个声明中设置所有的 margin 属性</td>
+</tr>
+<tr>
+<td><code>margin-bottom</code></td>
+<td>设置元素的底边距</td>
+</tr>
+<tr>
+<td><code>margin-left</code></td>
+<td>设置元素的左边距</td>
+</tr>
+<tr>
+<td><code>margin-right</code></td>
+<td>设置元素的右边距</td>
+</tr>
+<tr>
+<td><code>margin-top</code></td>
+<td>设置元素的顶部边距</td>
+</tr>
+</tbody>
+</table>
+<p>tips: 在两个容器的邻接处，有时会出现边距塌陷的问题，称为 <code>margin塌陷</code> ，一般发生在相邻块元素垂直边距和嵌套块元素垂直边距邻接的时候（不发生在左右边距上，只发生在顶部和底部之间，以大边距的为最终显示效果）</p>
+<hr>
+<h2 id="css填充和宽高"><a class="markdownIt-Anchor" href="#css填充和宽高">#</a> CSS 填充和宽高</h2>
+<p>填充在边框内到内容外之间的距离，可以通过 padding-top、padding-right、padding-bottom、padding-left 等属性来设置元素不同位置上的边框内填充。padding 的属性值可以为：1、length（以 px、pt、cm 等为单位指定填充）；2、%（以父元素宽度的百分比来指定填充）。同样可以取负值，表示减少内部填充的空间大小。</p>
+<p>同样也可以在一个 padding 属性中指定所有的填充属性。</p>
+<p>tips：如果一个元素有指定的宽度，那加在该元素上的填充会加在这个元素的总宽度上。</p>
+<p>CSS 的 width 和 height 属性不包括 margin、border 和 padding 的区域，只是用来定义元素的内容尺寸，可以设置的值有：1、auto（浏览器会计算出高度和宽度）；2、length（以 px、pt、cm 等为单位定义高度和宽度）；3、%（以父元素宽度的百分比来定义高度和宽度）；4、initial（将高度和宽度设置为默认值，实际上就是 auto 了）</p>
+<p><em><strong>总结汇总：</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>padding</code></td>
+<td>一个速记属性，用于在一个声明中设置所有的 padding 属性</td>
+</tr>
+<tr>
+<td><code>padding-bottom</code></td>
+<td>设置一个元素的底部填充</td>
+</tr>
+<tr>
+<td><code>padding-left</code></td>
+<td>设置元素的左侧填充</td>
+</tr>
+<tr>
+<td><code>padding-right</code></td>
+<td>设置元素的右侧填充</td>
+</tr>
+<tr>
+<td><code>padding-top</code></td>
+<td>设置元素的顶部填充</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td>设置元素的高度</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>设置元素的宽度</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="css盒模型"><a class="markdownIt-Anchor" href="#css盒模型">#</a> CSS 盒模型</h2>
+<p>本质为包裹每个 HTML 元素的盒子，包含：margin、border、padding、content 四个部分。</p>
+<p>盒子的宽度 = 内容宽度 + 左右填充 + 左右边框 + 左右边距</p>
+<p>盒子的高度 = 内容高度 + 上下填充 + 上下边框 + 上下边距</p>
+<p>👆标准盒模型</p>
+<p>另一个种盒模型：怪异盒模型</p>
+<p>给元素声明 box-sizing 属性，取值为 border-box。即 <code>box-sizing:border-box;</code> （如果属性值设置为 content-box 那就是标准盒（默认））</p>
+<p>这样设置后，增加样式，会挤压内容的空间，不会往外扩展。宽高就是 width 和 height 属性的值。</p>
+<p>这种盒子的宽度 = CSS 样式设置的 width 值 + 左右边距</p>
+<p>高度 = CSS 样式设置的 height 值 + 上下边距</p>
+<hr>
+<h2 id="css布局之显示属性"><a class="markdownIt-Anchor" href="#css布局之显示属性">#</a> CSS 布局之显示属性</h2>
+<p>要知道最重要的 CSS 属性：display，它指定一个元素是否显示以及如何显示。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、TML元素都有一个默认的显示值</span><br><span class="line"><span class="number">2</span>、类型不同，默认的显示值也不同</span><br><span class="line">常见的属性值有：block：元素显示为块级元素。inline：元素显示为行内元素。<span class="attribute">none</span>：元素显示隐藏元素。</span><br><span class="line">tips：<span class="attribute">visibility</span>:hidden;这样也会隐藏元素，但是该元素仍将占用它隐藏前相同的空间，即仍然影响着页面的布局。但是设置的<span class="attribute">display</span>属性的<span class="attribute">none</span>会不占用这块区域。</span><br></pre></td></tr></table></figure>
+<p>常见的块级元素和行内元素的汇总表，见下：</p>
+<img src="/img/loading.gif" class="lazyload" data-src="C:\Users\QJF\AppData\Roaming\Typora\typora-user-images\image-20231201235117124.png"  alt="image-20231201235117124" style="zoom:50%;" />
+<p>块级元素总是从一个新行开始，会占据可用的全部宽度，尽可能地想做向右伸展。这些元素地 display 默认值是 block。</p>
+<img src="/img/loading.gif" class="lazyload" data-src="C:\Users\QJF\AppData\Roaming\Typora\typora-user-images\image-20231201235150919.png"  alt="image-20231201235150919" style="zoom:50%;" />
+<p>内联元素不从新的一行开始只占用必要的宽度。这些元素的 display 值默认为 inline。</p>
+<hr>
+<h2 id="css布局之元素类型"><a class="markdownIt-Anchor" href="#css布局之元素类型">#</a> CSS 布局之元素类型</h2>
+<p>注意点：</p>
+<ul>
+<li>行内元素不能设置宽高样式</li>
+<li>行内元素可以设置边框线样式</li>
+<li>行内元素可以设置内填充样式</li>
+<li>行内元素可以设置左右方向的外边距样式</li>
+</ul>
+<ul>
+<li></li>
+</ul>
+<ul>
+<li>给块元素设置宽高、边框线、内填充、外边距样式，都是有效的。但是每个块元素独占一行</li>
+</ul>
+<p>👆如果要在一行上，可以采用 <code>display:inline-block;</code></p>
+<p>这种方式具有 inline 和 block 两种显示效果。（同时会使 margin 塌陷的问题也消失了）</p>
+<p>== 设置一个元素的 display 属性只能改变该元素的显示方式，而不能真正地改变 html 元素地类型。== 例如：一个具有 <code>display:inline;</code>  的块元素还是不允许在它的内部有其他块元素。</p>
+<p>由此引申出以下的嵌套规则：</p>
+<blockquote>
+<p><strong>规则一</strong>：块元素可以包含行内元素或某些块元素，但行内元素却不能包含块元素，它只能包含其他的行内元素。</p>
+<p><strong>规则二</strong>：块元素不能放在 p 元素里面。</p>
+<p><strong>规则三</strong>：有几个特殊的块级元素只能包含行内元素，不能再包含块元素，这几个特殊的元素是：h1、2、h3、h4、h5、h6、p、dt。</p>
+<p><strong>规则四</strong>：块级元素一般与块级元素并列、行内元素一般与行内元素并列。</p>
+</blockquote>
+<hr>
+<h2 id="css布局之溢出处理"><a class="markdownIt-Anchor" href="#css布局之溢出处理">#</a> CSS 布局之溢出处理</h2>
+<p>除了一般的 iframe 属性，也会院使用 CSS 的 overflow 属性，用来设定当内容太大，无法再指定区域显示时是否要裁剪内容或添加滚动条。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">overflow</span>:</span><br><span class="line">属性值有以下几种：</span><br><span class="line"><span class="number">1</span>、visible：默认，溢出的内容没有被剪掉（内容会在元素的框外显示）。</span><br><span class="line"><span class="number">2</span>、hidden：溢出的内容被剪切掉，且溢出部分不可见。</span><br><span class="line"><span class="number">3</span>、scroll：溢出的内容被剪掉，并且增加一个滚动条来查看其余的内容。</span><br><span class="line"><span class="number">4</span>、auto：类似于scroll，但只有在必要时才添加滚动条。</span><br><span class="line">要单独设置水平反向和垂直方向，可以设置一组属性：overflow-y和overflow-x。</span><br></pre></td></tr></table></figure>
+<p>有时候，文字标题或文字内容所在的容器空间有限，不能显示全部的内容，会出现一个省略号（示意内容显示补全，可以点击查看详情内容）</p>
+<p>可以给 <code>text-overflow</code>  设置属性值 <code>ellipsis</code></p>
+<p><em><strong>汇总：</strong></em></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>overflow</code></td>
+<td>指定如果内容哦给你溢出元素的盒子会发生什么。</td>
+</tr>
+<tr>
+<td><code>overflow-x</code></td>
+<td>指定如果内容溢出元素的内容区域，该如何处理内容的左 / 右边缘。</td>
+</tr>
+<tr>
+<td><code>overflow-y</code></td>
+<td>指定当内容溢出元素的内容区域时，对内容的上 / 下边缘的处理。</td>
+</tr>
+<tr>
+<td><code>text-overflow</code></td>
+<td>控制文本溢出的样式。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="css布局之浮动基础-清理"><a class="markdownIt-Anchor" href="#css布局之浮动基础-清理">#</a> CSS 布局之浮动基础、清理</h2>
+<p>给容器添加浮动后会<mark>脱离标准文档流</mark>，相当于飘起来。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">float</span>:;</span><br><span class="line">属性值有：<span class="attribute">left</span>（左侧浮动）、<span class="attribute">right</span>（右侧浮动）、<span class="attribute">none</span>（不浮动）。</span><br><span class="line">浮动只能让容器在当前所在行左侧或右侧排列。</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实现多个容器横向排列，只需要给所有的容器添加浮动样式即可。</li>
+</ul>
+<p>问题：如果实现有了好几个容器都是采用了浮动的方式，但是后面要加入非浮动的容器，那么势必会被上面设置了浮动对的容器给遮挡住，那要如何解决。</p>
+<p>①给浮动的容器套一个父元素。让父元素来撑起对应容器映射在文档流上的那块区域。</p>
+<p>为了让父元素的大小不受子元素的浮动效果影响，一种方式是直接设置宽高，要么就是设置溢出属性 <code>overflow:auto;</code> （对于超出边界的元素，父元素可以做自动的调整。）。</p>
+<p>②要么就是给其他添加进入的元素设置 <code>clear</code>  属性（清除样式，是不希望受到影响谁就添加 clear 属性）。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">clear</span>:;</span><br><span class="line">属性值有如下：</span><br><span class="line"><span class="attribute">left</span>（表示当前元素不受到左浮动的影响）</span><br><span class="line"><span class="attribute">right</span>（表示当前元素不受到右浮动的影响）</span><br><span class="line">both（表示上面两个的合体版）</span><br></pre></td></tr></table></figure>
+<p>***tips：*** 一般情况下，在布局页面结构时，元素选择尽量使用不同的标签，这样就可以通过元素选择器就可以分别给他们添加样式了。在设计网站时，在不知道具体要放入上面具体链接之前，我们可以先使用锚点链接，打个标记。</p>
+<p>通用清理浮动的方式，加入以下内容：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">选择器<span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="css布局之定位"><a class="markdownIt-Anchor" href="#css布局之定位">#</a> CSS 布局之定位</h2>
+<p>需要设定一个 position 属性</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">position</span>:</span><br><span class="line">有五种不同的属性值，具体如下：</span><br><span class="line">static:静态定位。</span><br><span class="line">relative:相对定位。（<span class="number">1</span>、需要配合left、top、right、bottom这些定位属性才能生效；<span class="number">2</span>、相对的是容器自身的屏幕坐标<span class="number">0</span>，<span class="number">0</span>点；<span class="number">3</span>、容器位置发生位移后，原来占据的空间依然保留；默认会覆盖没有定位的容器。）</span><br><span class="line">fixed:固定定位。（<span class="number">1</span>、是相对于浏览器视口定位的，这意味着集市页面发生滚动，它也始终保持在同一个位置；<span class="number">2</span>、top、right、bottom和left属性被用来定位元素，但不是必须的。）</span><br><span class="line">absolute:绝对定位。（<span class="number">1</span>、设置了会脱离文档流；<span class="number">2</span>、参照点为，有定位设置的离他最近的祖先元素的<span class="number">0</span>，<span class="number">0</span>点坐标；<span class="number">3</span>、默认会覆盖没有定位的容器。）</span><br><span class="line">sticky:粘性定位。【会产生动态效果，很像static和fixed的结合】（如果设置之后没有效果，会有如下原因：<span class="number">1</span>、父元素不能添加overflow:hidden或者overflow:auto属性；<span class="number">2</span>、元素自身必须声明top、bottom、left、right一个或多个属性，否则就相当于静态定位了；<span class="number">3</span>、父元素的高度不能低于sticky定位元素的高度；<span class="number">4</span>、sticky定位元素仅在其父元素内生效。）（<span class="number">1</span>、初始状态相当于static定位；<span class="number">2</span>、相对于父容器的定位条件符合时，容器变为固定定位；<span class="number">3</span>、top、right、bottom或left至少声明一个，粘性定位才能生效。）</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="css定位的堆叠"><a class="markdownIt-Anchor" href="#css定位的堆叠">#</a> CSS 定位的堆叠</h2>
+<p>CSS 为盒模型的布局提供了三种不同的定位方案：正常文档流、浮动、定位。最后一种的绝对定位会把元素从正常文档流中完全移走（最终落脚点取决于开发者）。</p>
+<p>出了上下左右外，css 也允许我们使用 z-index 属性将元素放置在三维空间中，设置值要为一个整数值（正整数，负整数，0）。</p>
+<p>容器的堆叠顺序的计算，是先比较同级容器的。子容器是不会超出父容器的堆叠顺序的。</p>
+<hr>
+<h2 id="css布局值宽高自适应"><a class="markdownIt-Anchor" href="#css布局值宽高自适应">#</a> CSS 布局值宽高自适应</h2>
+<p>元素的宽或高能够随着屏幕的宽高变化而变化就是宽高自适应。</p>
+<p>将 width 和 height 的值设置为 %，可以实现元素的宽高自适应。</p>
+<p>通过设置 max-width、max-height、min-width、min-height 可以设置元素宽高自适应的临界值。</p>
+<hr>
+<h2 id="css的数学函数"><a class="markdownIt-Anchor" href="#css的数学函数">#</a> CSS 的数学函数</h2>
+<p>css 的数学函数允许将数学表达式作为属性使用。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">常见格式有：</span><br><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="built_in">calc</span>(<span class="number">100%</span>+<span class="number">100px</span>)</span><br><span class="line">    width:<span class="built_in">calc</span>(<span class="number">100%</span>-<span class="number">100px</span>)</span><br><span class="line">    width:<span class="built_in">calc</span>(<span class="number">100%</span>*<span class="number">2px</span>)</span><br><span class="line">    width:<span class="built_in">calc</span>(<span class="number">100%</span>/<span class="number">2px</span>)</span><br><span class="line">&#125;</span><br><span class="line">小括号里面编写数学公式</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="bfc"><a class="markdownIt-Anchor" href="#bfc">#</a> BFC</h2>
+<p>块格式上下文</p>
+<p>一般在相邻块元素垂直边距和嵌套块元素垂直边距上会发生 margin 塌陷。</p>
+<p>如果一个元素触发了 BFC 规则，我们可以称它为 BFC 区域。</p>
+<p>特点 1、两个 BFC 区域之间是相互独立互不影响的。（如果容器内部的子元素出现了上下边距，边距不会跑到外面去影响其他元素，而是在内部拉开距离，这使得父元素变成了一个独立的区域）</p>
+<p>特点 2、元素被触发了 BFC 规则，那么浏览器在计算这个元素的高度的时候，会把浮动元素也考虑进去，这样不管有多少个浮动元素，都不用担心父元素没有高度了。</p>
+<p>设置触发 BFC 的条件：</p>
+<p>1、设置 <code>float:left/right;</code></p>
+<p>2、设置 <code>position:absolute/fixed;</code></p>
+<p>3、设置 <code>display:inline-block/tabl-cell等;</code></p>
+<p>4、设置 <code>overflow:auto/hidden等;</code></p>
+<p>无论是浮动、定位或者更改元素类型，都有可能大幅度影响页面布局，而 overflow 这个属性则没有这方面的问题。所以一般最后一个设置的比较多。</p>
+<hr>
+<h2 id="css表格"><a class="markdownIt-Anchor" href="#css表格">#</a> CSS 表格</h2>
+<p>定义表格的边框：</p>
+<p>使用 <code>border</code>  属性，因为 th、td 等元素都占有一定的位置，所以就这样加上边框会有空隙的存在，这时要采用 <code>border-collapse</code>  来把表格的边框折叠成一个单一的边框。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">border-collapse</span>:collapse;</span><br></pre></td></tr></table></figure>
+<p><code>width</code>  和 <code>height</code>  属性可以用来定义表格的高度和宽度。</p>
+<p><code>text-align</code>  属性用来设置 th 或 td 中内容的水平对齐方式（默认的 th 内容是居中对齐的，td 元素的内容是左对齐的）。</p>
+<p><code>vertical-align</code>  属性用来设置 th 或 td 中内容的垂直对齐方式（默认的 th 和 td 的内容都是垂直居中对齐）。</p>
+<p><code>padding</code>  属性用来给内容和边框线之间添加填充。</p>
+<p><code>border-bottom</code>  属性用来实现表格的水平分割线效果。</p>
+<hr>
+<h2 id="完结撒花"><a class="markdownIt-Anchor" href="#完结撒花">#</a> 完结撒花</h2>
+<p><em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em> 。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Ex-monster</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/04/21/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94HTML+CSS/">http://example.com/2023/04/21/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94HTML+CSS/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">monster's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/HTML/">HTML</a></div><div class="post_share"><div class="social-share" data-image="/img/雨梦.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/wechat.jpg" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="lazyload post-qr-code__img" src="/img/alipay.jpg" alt="支付寶"/><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/2023/06/26/Linux%20%E5%AD%A6%E4%B9%A0%E8%AE%B2%E4%B9%89/"><img class="prev_cover lazyload" data-src="/img/雪天.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux学习讲义</div></div></a></div><div class="next-post pull_right"><a href="/2023/04/13/VS%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE/"><img class="next_cover lazyload" data-src="/img/观塔.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Visual Studio 常用快捷键分享</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> 评论</span></div><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: '374caea017c7741d14a4',
+  clientSecret: '411aa344eb6beda2ef124d108098fcd769944b76',
+  repo: 'Ex-monsters.github.io',
+  owner: 'Ex-monsters',
+  admin: ['Ex-monsters'],
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN',
+  perPage: 10,
+  distractionFreeMode: false,
+  pagerDirection: 'last',
+  createIssueManually: false,
+  updateCountCallback: commentCount
+})
+gitalk.render('gitalk-container')
+
+function commentCount(n){
+  try {
+    document.getElementsByClassName('gitalk-comment-count')[0].innerHTML= n
+  } catch (e) {
+    return false
+  }
+}</script></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Ex-monster</div><div class="framework-info"><span>驱动 </span><a target="_blank" rel="noopener" href="https://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="阅读模式"></i><i class="fa fa-plus" id="font_plus" title="放大字体"></i><i class="fa fa-minus" id="font_minus" title="缩小字体"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="简繁转换" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="夜间模式"></i></div><div id="rightside-config-show"><div id="rightside_config" title="设置"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="直达评论"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="目录" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="回到顶部" aria-hidden="true"></i></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fa fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="/js/third-party/fireworks.js"></script><script id="ribbon_piao" mobile="true" src="/js/third-party/piao.js"></script><script id="canvas_nest" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="true" src="/js/third-party/canvas-nest.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@latest/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@latest/lazysizes.min.js" async=""></script><script src="/js/search/local-search.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>
